@@ -4,10 +4,11 @@
     <div class="container p-3 home-container">
       <h1 class="heading"[translate]="'appHome.home.head'"></h1>
       <div class="mt-2 right">
-                <input name="typeOfScoreCard" id="and" type="radio" [disabled]="disableTypeOfScorecard" value="and" [(ngModel)]="mode">
-                <label class="mr-3" for="and" [translate]="'appHome.home.and'"></label>
+                
                 <input name="typeOfScoreCard" id="or" type="radio"  [disabled]="disableTypeOfScorecard" value ="or" [(ngModel)]="mode">
                 <label for="or" [translate]="'appHome.home.or'"></label>
+                <input name="typeOfScoreCard" id="and" type="radio" [disabled]="disableTypeOfScorecard" value="and" [(ngModel)]="mode">
+                <label class="mr-3" for="and" [translate]="'appHome.home.and'"></label>
             </div>
        <div class="col-md-3 mb-3 right">
          
@@ -149,7 +150,7 @@
         <button class="btn btn-primary use-template" [disabled]="!searchText" (click)="fetchTableDetailsText(questionFormModel.fieldType,questionFormModel.fieldName,searchText)" [translate]="'appHome.home.addValue'"></button>
         <p class="selected" *ngIf ="alreadySelectedText">Already Added this field</p>
     </div>
-    <form class="form-inline date-picker" style="display:inline-block;width: 602px;" *ngIf="dateInput">
+    <form class="form-inline date-picker" style="display:inline-block;width: 48%;" *ngIf="dateInput">
       
         <div class="input-group mt-2" style="display:inline-flex;">
             <input class="form-control angular-mydatepicker" [ngClass]="{'is-invalid': invalidFromDate && invalidDateRange}" name="dateFrom"

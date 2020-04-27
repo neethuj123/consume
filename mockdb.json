@@ -212,11 +212,32 @@
     }
   ],
   "mock-api-response": {
-    "usageType": "RAW",
-    "fieldName": "ProductName",
-    "input": [
-      "product1"
-    ]
+    "dateField": "ContractDate",
+    "fromDate": "2020-04-27T18:43:12.000Z",
+    "globalOperation": "or",
+    "pageNumber": 0,
+    "recordsPerPage": 10,
+    "toDate": "2020-04-27T18:43:12.000Z",
+    "universalQueryCriteria": [
+      [
+        {
+          "fieldName": "channel",
+          "listValue": [
+            "channel1"
+          ],
+          "type": "string"
+        },
+        {
+          "fieldName": "ProductName",
+          "listValue": [
+            "product1",
+            "product2"
+          ],
+          "type": "string"
+        }
+      ]
+    ],
+    "token": "7KTrHZx9Jyn1Pw3mEcfWtfne9Lo1vziZM-bM-HIrVLnfWs2e0Nri7CjLX2PzhRJkqS_Q9YOLi8PQu2ZXCY8i5whzuuzIsHQYj1uazqCWoXhZ445Ww77CADDy07-P9qay"
   },
   "deleteScorecard": [],
   "userLogin": {

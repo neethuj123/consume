@@ -127,6 +127,7 @@ toTime: NgbTimeStruct;
   alreadySelectedText = false;
   alreadySelectedDate = false;
   itemsAsObjects = [];
+  fieldFormatValues= [];
   hoveredDate: NgbDate | null = null;
   rawUsage = true;
   processed = false;
@@ -142,7 +143,8 @@ toTime: NgbTimeStruct;
   channelFinalArray;
   statusFinalArray;
   productFinalArray;
-  mode = "and";
+  mode = "or";
+  dateFieldName='';
   dateFieldFrom: IMyDateModel = null;
   dateFieldTo: IMyDateModel = null;
   dateFieldInputOptions: IAngularMyDpOptions = {
@@ -595,6 +597,7 @@ onItemDeSelect(item: any){
   
     fetchTableDetailsFromTo(fieldType,fieldName,from,to,fromTime,toTime) {
       this.dateArray = [];
+      this.dateFieldName= fieldName;
       this.fromDateRange = from.singleDate.jsDate.toDateString();
       this.toDateRange = to.singleDate.jsDate.toDateString();
       this.fromTimeInFormat=new Date(this.fromDateRange+" "+fromTime.hour.toString()+":"+fromTime.minute.toString()+":"+fromTime.second.toString()+" "+"UTC").toISOString();
@@ -629,15 +632,23 @@ onItemDeSelect(item: any){
         });
   }
     downloadUsageInfo(fieldType,fieldValue){
+    this.fieldFormatValues = [];
+     fieldValue.forEach((values: any) => {
+          this.fieldFormatValues.push(values);
+     });
+       this.fieldFormatValues = this.fieldFormatValues.filter(({ fieldName }) => fieldName !== 'ContractDate');        
+
+    console.log(this.fieldFormatValues);
+
       this.data = {
-        "dateField": "orderedDate",
-        "fromDate": "2020-01-13T06:09:30.026Z",
+        "dateField": this.dateFieldName,
+        "fromDate": this.fromTimeInFormat,
         "globalOperation": this.mode,
         "pageNumber": 0,
         "recordsPerPage": 10,
-        "toDate": "2020-04-13T06:09:30.026Z",
+        "toDate":this.toTimeInFormat,
         "universalQueryCriteria": [
-          fieldValue
+          this.fieldFormatValues
         ],
         "token":this.user.token
       }
