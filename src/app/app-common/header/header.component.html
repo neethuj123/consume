@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-light align-items-end">
+    <div class="collapse navbar-collapse container">
+        <a class="navbar-brand align-self-center" routerLink="/">
+            <img class="header-logo" src="assets/img/Logo-dark-wp.png"  width="100" alt="Data Altatres">
+            <img src="assets/img/logo.png"  width="150" alt="Data Altatres">
+            <!-- <h1 class="h4 mb- logo-consumption text-center" [translate]="'login.consumption'"></h1> -->
+        </a>
+        <ul class="navbar-nav mt-2 mt-lg-0">
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a class="nav-link" routerLink="/home" tabindex="1" [translate]="'appCommon.header.search'"></a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a class="nav-link" routerLink="/history" tabindex="2" [translate]="'appCommon.header.history'"></a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+               <!--  <a class="nav-link" routerLink="/apilog" tabindex="3" [translate]="'appCommon.header.apilog'"></a> -->
+                <a class="nav-link disabled" tabindex="3" [translate]="'appCommon.header.report'"></a>
+            </li>
+        </ul>
+        <app-user-profile></app-user-profile>
+    </div>
+</nav>

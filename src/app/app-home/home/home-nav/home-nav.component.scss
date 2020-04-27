@@ -1,0 +1,38 @@
+ $whiteColor: #ffffff;
+ $disabledColor: #757575;
+ .home-nav-card {
+    $navyBlueColor: #00576f;
+    border: 1px solid #dde6e6;
+    color: $navyBlueColor;
+    min-height: 210px;
+    h5 {
+       color: $navyBlueColor;
+    }
+
+    &:hover {
+       color: $whiteColor;
+       background: $navyBlueColor;
+       cursor: pointer;
+
+        h5 {
+            color: $whiteColor;
+        } 
+    }
+}
+:host(.disabled) {
+    .home-nav-card{
+        color: $disabledColor !important;
+        cursor: default;
+        h5 {
+            color: $disabledColor;
+        }
+        &:hover {
+            color: $disabledColor;
+            background:$whiteColor;
+            cursor: default;
+            h5 {
+                color: $disabledColor;
+            } 
+        }
+    }
+}

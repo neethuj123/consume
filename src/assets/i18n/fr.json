@@ -1,0 +1,230 @@
+{
+    "appCommon": {
+      "header": {
+      "search": "Dashboard",
+        "history": "Charge D&B historique",
+        "report": "Rapport",
+        "profile": {
+          "myAccount": "Mon compte",
+          "resources": "Ressources",
+          "logout": "Me déconnecter"
+        }
+      },
+      "footer": {
+        "text": "Droits de reproduction et de diffusion réservés \u00A9 {{currentYear}} Altares | Mentions légales et crédits "
+      }
+    },
+  
+    "appHome": {
+      "home": {
+        "selectUsage": "type d'utilisation",
+        "apiLog": "API LOG",
+        "addField":"Ajouter le champ",
+        "addValue":"Ajouter de la valeur",
+        "head":"Afficher / télécharger les informations d'utilisation",
+        "rawHead":"Lire l'utilisation brute traitée",
+        "processHead":"Lire l'utilisation traitée",
+        "criteria":"Voir le téléchargement Critères",
+        "view":"Vue",
+        "and":"Et",
+        "or":"Ou",
+        "primaryRaw":"+Identifiant",
+        "secondaryRaw":"Entrez des identifiants",
+        "primaryChannel":"+Canal",
+        "secondaryChannel":"Sélectionnez les chaînes",
+        "primaryProduct":"+Produit",
+        "secondaryProduct":"Sélectionnez les produits",
+        "primaryStatus":"+Statut",
+        "secondaryStatus":"Sélectionnez les statuts",
+        "primarySubscribe":"+ Identifiant d'abonné",
+        "secondarySubscribe":"Entrez les ID d'abonné",
+        "primaryUser":"+Identifiant d'utilisateur",
+        "secondaryUser":"Entrez les ID utilisateur"
+      }
+    },
+    "appConfigureScorecard": {
+      "configureScorecardSearch": {
+        "searchUser": {
+          "search": "RECHERCHER",
+          "placeHolder": "IDENTIFIANT INTUIZ"
+        },
+        "searchResult": {
+          "userDetail": {
+            "userId": "Identifiant intuiz : ",
+            "emailId": "Adresse email :",
+            "deleteAllUserData": "Supprimer toutes les données utilisateur",
+            "createNewScorecard": "Créer un formulaire de decision"
+          },
+          "userScorecards": {
+            "activate": "Activer",
+            "deActivate": "Désactiver",
+            "recalculateAllSirens": "Simuler les points pour tous les SIREN",
+            "displayInDecision": "Activer dans Consultation Widget"
+          },
+          "noSearchResult": "Aucun résultat..."
+        }
+      },
+      "configureScorecardCreate": {
+        "createScorecard": "Créer un formulaire de decision",
+        "add": "Ajouter le champ",
+        "update": "Mise à jour",
+        "cancel": "Annuler",
+        "save": "Sauvegarder",
+        "delete": "Supprimer",
+        "test": "Tester",
+        "publish": "Publier",
+        "label": "Nom",
+        "selectTemplate" : "Sélectionner un modèle",
+        "useTemplate" : "Utiliser ce modèle",
+        "baseForm": {
+          "selectType": "Sélectionner le type de formulaire",
+          "automatic": "Automatique",
+          "manual": "Manuel",
+          "displayCheckboxLabel": "Visualiser la scorecard dans l'aperçu du widget Décision de la page consultation",
+          "error": {
+            "requiredLabel": "Ajoutez un nom à la scorecard"
+          }
+        },
+        "questions": {
+          "label": "Questions",
+          "dataType": "Type de donnée",
+          "field": "Champ",
+          "statusOfTheQuestion": "Statut de la question",
+          "active": "Active",
+          "inActive": "Désactivé",
+          "selectCodeNAF": "Select Code Naf",
+          "error": {
+            "requiredLabel": "Ajoutez un nom"
+          },
+          "ptsForQuestion": {
+            "valuesNote": "<b>Information :</b> Pour une tranche, la première valeur est <i>inclusive</i> et la dernière valeur est <i>exclusive</i>",
+            "valuesDateNote": "<b>Information :</b> Pour une tranche, la première date est <i>inclusive</i> et la dernière date est <i>exclusive</i>",
+            "values": "Valeurs",
+            "score": "Points",
+            "status": "Statut",
+            "active": "Active",
+            "secondaryPlaceholder": "Exemple : 1, 1-2,3 etc…",
+            "plusSlice": "+ Tranche",
+            "plusValue": "+ Valeur",
+            "plusValueRange": "+ Valeur/Fourchette",
+            "error": {
+              "requiredScore": "Ajoutez un point",
+              "requiredFromDate": "Veuillez indiquer une date de début",
+              "requiredToDate": "Veuillez indiquer une date de fin",
+              "requiredGreaterDate": "Veuillez indiquer une date supérieure à la date de début",
+              "slice": "Ajoutez une tranche valide",
+              "value": "Ajoutez une valeur",
+              "valueAndSlice": "Ajoutez une tranche ou une valeur",
+              "toGreaterThan": "Veuillez indiquer une limite inférieure et supérieure valide"
+            }
+          },
+          "multiSelect": {
+            "selectAll" : "Tout sélectionner",
+            "code" : "Code",
+            "label" : "Label",
+            "searchText" : "Indiquer une valeur à chercher"
+          }
+        },
+        "decisionalGrid": {
+          "label": "Grille des résultats",
+          "gridForm": {
+            "fromValue": "De la valeur <i>(Inclusive)</i>",
+            "toValue": "A la valeur <i>(Exclusive)</i>",
+            "approvalStatus": "Statut",
+            "needApproval": "Nécessite une validation",
+            "color": "Couleur",
+            "result": "Résultat",
+            "error": {
+              "requiredLabel": "Ajoutez un nom",
+              "requiredValue": "Ajoutez une valeur",
+              "largeValue": "Ajoutez une valeur supérieure ou égale à la valeur \"De\" ",
+              "overlapping": "Le points {{from}} - {{to}} chevauche {{invalidRangeFrom}}-{{invalidRangeTo}}"
+            }
+          },
+          "gridTable": {
+            "score": "Points",
+            "color": "Couleur",
+            "result": "Résultat",
+            "needApproval": "Nécessite une validation",
+            "actions": "Actions",
+            "yes":"Oui",
+            "no": "Non"
+          }
+        }
+      },
+      "configureScorecardEdit": {
+          "edit": "Modifier - {{scoreCardLabel}}",
+          "updateSuccess": "Le formulaire a été mis à jour!",
+          "publishSuccess": "La scorecard a été publiée avec succès!!!",
+          "publishInvalid": "Ajoutez au minimum une question, un points et une réponse dans la grille des résultats",
+          "publishComment": "Ajoutez un commentaire",
+          "deleteConfirm": "Voulez vous supprimer cette version provisoire?"
+      },
+      "configureScorecardView": {
+        "viewHistory": "Visualiser l'historique",
+        "editDraftVersion": "Modifier la version provisoire",
+        "base": {
+          "scorecardType": "Type de scorecard :",
+          "displayInDecision": "Visualiser la scorecard dans l'aperçu du widget Décision de la page consultation",
+          "automatic": "Automatique",
+          "manual": "Manuel",
+          "yes": "Oui",
+          "no":"Non"
+        }
+      },
+      "configureScorecardHistory": {
+        "label": "Archive",
+        "version": "Version",
+        "published": "Publié",
+        "comment": "Commentaire",
+        "actions": "Actions",
+        "restore": "Restaurer",
+        "restoreConfirmationText": "Si vous restaurez cette version, vous perdrez votre draft actuel de la scorecard.  Si vous souhaitez continuer, ajoutez un commentaire et cliquez sur continuer",
+        "currentVersion": "v.{{version}} (courant)"
+      },
+      "scorecardTest": {
+        "siren": "SIREN",
+        "score": "Points {{score}}",
+        "testScorecard": "Tester la scorecard",
+        "processScorecard": "Lancer le calcul de la scorecard",
+        "invalidSiren": "Ajoutez un SIREN",
+        "notFound": "Aucun résultat!!!",
+        "noDecision": "Aucune décision"
+      }
+    },
+    "processing" : "Calcul en cours…",
+    "loading" : " Chargement en cours…",
+    "modal":{
+      "confirmationTexts":{
+        "activate": "Ajoutez votre commentaire pour continuer l'activation de la scorecard",
+        "deactivate":"Ajoutez votre commentaire pour continuer la désactivation de la scorecard",
+        "delete":"Toutes les données liées au formulaire de decision seront supprimées.",
+        "duplicate":"Ajoutez votre commentaire pour dupliquer la scorecard",
+        "deleteAllUserData" : "Toutes les données associées à ce formulaire seront supprimées",
+        "reachedMaxScorecardLimit" : "Vous avez atteint le nombre maximum de formulaire. Veuillez supprimer un formulaire pour en créer un nouveau.",
+        "displayInDecision": "Visualiser le formulaire dans l'aperçu du widget Décision de la page consultation"
+      },
+      "messageTexts": {
+        "reCalculatePoup": "Demande soumise avec succès ... Les changements de points seront mis à jour dans Intuiz une fois qu'il sera terminé."
+      },
+      "proceed": "Continuer",
+      "add": "Ajouter",
+      "cancel": "Annuler"
+    },
+    "readmore": {
+      "readmoreLabel": "Lire tout",
+      "readlessLabel": "Lire moins"
+    },
+    "login": {
+      "login": "Me connecter",
+      "userName": "Identifiant",
+      "invalidUserName": "Entrez votre identifiant",
+      "password": "Mot de passe",
+      "invalidPassword": "Entrez votre mot de passe",
+      "invalidLogin": "Identifiant ou mot de passe incorrect",
+      "atelierDecisionDescription": "Take advantage of a single source for access to all information on French businesses",
+      "atelierDecision": "Atelier Decision",
+      "welcomeback": "Bonjour",
+      "consumption": "Consumption"
+    }
+}

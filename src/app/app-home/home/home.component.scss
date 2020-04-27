@@ -1,0 +1,142 @@
+.home-container {
+    background: #ffffff;
+    .row {
+        height: 70vh;
+        min-height: 70vh;
+    }
+}
+
+.raw-process-head{
+    margin-bottom: 20px;
+    color: #a2a7a6;
+}
+.use-template{
+	margin-left:20px;
+}
+.date-from-div{
+  display:inline-flex;
+  margin-right:20px;
+}
+.raw-tag{
+  display: inline-grid;
+    margin-bottom: 24px;
+}
+.download{
+  width: 30px;
+  margin-left: 23px;
+    cursor:pointer
+}
+.tag{
+  margin-top:20px;
+  margin-bottom:20px;
+}
+.table-data{
+	font-size:13px;
+}
+.select-number-page{
+	width: 153px;
+    font-size: 13px;
+    line-height: 12px;
+}
+//data picker style
+
+    .form-group.hidden {
+      width: 0;
+      margin: 0;
+      border: none;
+      padding: 0;
+    }
+    .custom-day {
+      text-align: center;
+      padding: 0.185rem 0.25rem;
+      display: inline-block;
+      height: 2rem;
+      width: 2rem;
+    }
+    .custom-day.focused {
+      background-color: #e6e6e6;
+    }
+    .custom-day.range, .custom-day:hover {
+      background-color: rgb(2, 117, 216);
+      color: white;
+    }
+    .custom-day.faded {
+      background-color: rgba(2, 117, 216, 0.5);
+    }
+.from-date{
+    margin-right:23px;
+}
+.right{
+      float: right;
+}
+.clear{
+  clear:both;
+}
+.criteria{
+      margin-left: 22px;
+    margin-bottom: 14px;
+    color: #a2a7a6;
+}
+.add{ 
+    padding: 0;
+    margin-top: 14px;
+}
+.field-filter{
+  display: inline-block;
+    margin-left: 10px;
+}
+.input-field{
+  position:absolute;
+  bottom:64px;
+}
+.filter-details{
+    text-align:center;
+    padding-top: 14px;
+    border-radius: 8px;
+    border: 2px solid #d6d2d2;
+}
+.filter-details-add{
+    padding-top: 14px;
+    border-radius: 8px;
+    border: 2px solid #d6d2d2;
+    padding-bottom:14px;
+}
+.added-item{
+  margin-left: 12px;
+    margin-bottom: 8px;
+}
+.filter-table-details{
+      padding-top: 14px;
+    border-radius: 8px;
+    border: 2px solid #d6d2d2;
+    margin-top: 20px;
+}
+.filter-lbl{
+  display:block
+}
+.number-ipt{
+  display:inline-block
+}
+.time-picker-from{
+ display:inline-block;
+}
+.date-picker{
+      margin-bottom: 20px;
+    margin-left: 16px;
+}
+.time-date-btn{
+  display:block;
+  margin:20px auto;
+}
+.selected {
+  position:absolute;
+      color: red;
+    font-size: 11px;
+}
+.heading{
+  float: left;
+    margin-top: 8px;
+    margin-left: 21PX;
+    font-size: 19px;
+    color: #25cbd3;
+}

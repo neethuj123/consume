@@ -1,0 +1,42 @@
+.navbar {
+    min-height: 80px;
+    background: #ffffff;
+
+    .navbar-nav {
+        li {
+            font-size: 13px;
+            font-family: "ITC Avant Garde Gothic W01 Bk", sans-serif;
+            background: #ece9e5;
+            margin-right: 17px;
+        }
+        .nav-link {
+            color: #00576f;
+            cursor: pointer;
+            font-family: ITC Avant Garde Gothic W01 Md, sans-serif;
+            font-size:16px;
+            &.disabled{
+                color:#757575;
+            }
+        }
+        
+        .nav-item {
+            &.active {
+                .nav-link {
+                    color: #25cbd3;
+                    border-bottom: 3px solid #25cbd3;
+                }
+            }
+        }
+    }
+}
+.logo-consumption{
+    font-weight: bold;
+    color: #25cbd3;
+    font-family: sans-serif;
+    font-size: 27px;
+}
+.header-logo{
+    display:block;
+    margin-left:12px;
+}
+

@@ -1,0 +1,49 @@
+<div class="container-fluid background-1">
+    <div class="row justify-content-center align-items-center h-100">
+        <div class="col-md-5">
+            <div class="row login-wrapper">
+                <!-- <div class="col p-0 d-flex flex-column login-background">
+                    <p class="app-font-bk h5 p-3 p-md-5 position-absolute text-white-50" [translate]="'login.atelierDecisionDescription'"></p>
+                    <h5 class="app-font-bk h-atelier p-3 h1 my-auto text-center text-white" [translate]="'login.atelierDecision'"></h5>
+                </div> -->
+                <div class="col p-0">
+                    <div class="bg-white p-5 m-0 app-font-bk">
+                        <div class="mx-auto">
+                            <img class="d-flex login-logo mb-1 mx-auto" width="150" alt="Data Altatres" src="assets/img/Logo-dark-wp.png">
+                            <img class="d-flex login-main-logo mb-1 mx-auto" style="padding-bottom: 24px"width="200" alt="Data Altatres" src="assets/img/logo.png">
+                            <!-- <h1 class="h4 mb-4 ml-2 logo-consumption text-center" [translate]="'login.consumption'"></h1> -->
+                            <!-- <h1 class="h4 mb-4 ml-2 text-black-50 text-center" [translate]="'login.welcomeback'"></h1> -->
+                        </div>                        
+                        <div class="login-form mx-auto">
+                            <div class="margin-bottom-20">
+                                <label class="mb-2 login-page-label app-font-md" for="usernameText" [translate]="'login.userName'"></label>
+                                <div class="input-container">
+                                    <span><i class="fa fa-user ml-2"></i></span>
+                                    <input [ngClass]="{'is-invalid': validated && usernameText?.errors?.required}" class="form-control mb-2 login-page-input" [(ngModel)]="username" (keyup.enter)="login()" name="usernameText" #usernameText="ngModel" type="text" required/>
+                                </div>
+                                <div *ngIf="validated && usernameText?.errors?.required" class="invalid-feedback" [translate]="'login.invalidUserName'"></div>
+                            </div>
+                            <div class="margin-bottom-20">
+                                <label class="mb-2 login-page-label app-font-md" [translate]="'login.password'"></label>
+                                <div class="input-container">
+                                    <span><i class="fa fa-lock  ml-2"></i></span>
+                                    <input [ngClass]="{'is-invalid': validated && passwordText?.errors?.required}" class="form-control mb-2 login-page-input" [(ngModel)]="password" (keyup.enter)="login()" name="passwordText" #passwordText="ngModel" type="password" required/>
+                                </div>
+                                <div *ngIf="validated && passwordText?.errors?.required" class="invalid-feedback" [translate]="'login.invalidPassword'"></div>
+                            </div>
+                            <p class="invalid-feedback mb-3 app-font-md" *ngIf="invalidLogin" [translate]="'login.invalidLogin'"></p>
+                            <div class="margin-bottom-20">
+                                <button class="btn btn-primary mr-3" (click)="login()" [translate]="'login.login'"></button>
+                            </div>
+                        </div>
+                        <div class=" mx-auto">
+                            <p class="login-footer mx-5 pt-3 text-black-50 text-center" [translate]="'appCommon.footer.text'" [translateParams]="{currentYear: currentYear}"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

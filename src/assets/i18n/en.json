@@ -1,0 +1,229 @@
+{
+    "appCommon": {
+      "header": {
+        "search": "Dashboard",
+        "history": "Historical D&B Charging",
+        "report": "Report",
+        "profile": {
+          "myAccount": "My Account",
+          "resources": "Resources",
+          "logout": "Logout"
+        }
+      },
+      "footer": {
+        "text": "Copyright \u00A9 Altares {{currentYear}} - RCS Nanterre B 572 014 199 | Mentions Legales"
+      }
+    },
+    "appHome": {
+      "home": {
+        "selectUsage": "Usage Type",
+        "apiLog": "API Log",
+        "addField":"Add Field",
+        "addValue":"Add Value",
+        "head":"View/Download Usage Information",
+        "rawHead":"Read Raw Usage Processed",
+        "processHead":"Read Processed Usage",
+        "criteria":"View/Download criteria",
+        "view":"View",
+        "and":"And",
+        "or":"Or",
+        "primaryRaw":"+Identifier",
+        "secondaryRaw":"Enter Identifiers",
+        "primaryChannel":"+Channel",
+        "secondaryChannel":"Select Channels",
+        "primaryProduct":"+Product",
+        "secondaryProduct":"Select Products",
+        "primaryStatus":"+Status",
+        "secondaryStatus":"Select Statuses",
+        "primarySubscribe":"+Subscriber Id",
+        "secondarySubscribe":"Enter Subscriber Ids",
+        "primaryUser":"+User Id",
+        "secondaryUser":"Enter User Ids"
+      }
+    },
+    "appConfigureScorecard": {
+      "configureScorecardSearch": {
+        "searchUser": {
+          "search": "Add Value",
+          "placeHolder": "USER ID"
+        },
+        "searchResult": {
+          "userDetail": {
+            "userId": "User ID:",
+            "emailId": "Email ID:",
+            "deleteAllUserData": "Delete all user data",
+            "createNewScorecard": "Create new scorecard"
+          },
+          "userScorecards": {
+            "activate": "Activate",
+            "deActivate": "De-Activate",
+            "recalculateAllSirens": "Recalculate scores for all Sirens",
+            "displayInDecision": "Display in Decision"
+          },
+          "noSearchResult": "No search result..."
+        }
+      },
+      "configureScorecardCreate": {
+        "createScorecard": "Create Scorecard",
+        "add": "Add Field",
+        "update": "Update",
+        "cancel": "Cancel",
+        "save": "Save",
+        "delete": "Delete",
+        "test": "Test",
+        "publish": "Publish",
+        "label": "Label",
+        "selectTemplate" : "Select a template",
+        "useTemplate" : "Use this template",
+        "baseForm": {
+          "selectType": "Select scorecard type",
+          "automatic": "Automatic",
+          "manual": "Manual",
+          "displayCheckboxLabel": "Display in DECISION widget icon in Intuiz consultation page",
+          "error": {
+            "requiredLabel": "Please provide a scorecard label"
+          }
+        },
+        "questions": {
+          "label": "Questions",
+          "dataType": "Data Type",
+          "field": "Field",
+          "statusOfTheQuestion": "Status of the question",
+          "active": "Active",
+          "inActive": "Inactive",
+          "selectCodeNAF": "Select Code Naf",
+          "error": {
+            "requiredLabel": "Please provide a label"
+          },
+          "ptsForQuestion": {
+            "valuesNote": "<b>Note</b>: For slice, lower value is <i>inclusive</i> and upper value is <i>exclusive</i>",
+            "valuesDateNote": "<b>Note</b>: For Date slice, 'From' date is <i>inclusive</i> and 'To' date is <i>exclusive</i>",
+            "values": "Values",
+            "score": "Score",
+            "status": "Status",
+            "active": "Active",
+            "secondaryPlaceholder": "Eg. 1, 1-2, 3...",
+            "plusSlice": "+ Slice",
+            "plusValue": "+ Value",
+            "plusValueRange": "+ Value / Range",
+            "error": {
+              "requiredScore": "Please provide a score",
+              "requiredFromDate": "Please provide a 'From' date",
+              "requiredToDate": "Please provide a 'To' date",
+              "requiredGreaterDate": "Please provide a date greater than 'From' date",
+              "slice": "Please provide a valid slice",
+              "value": "Please provide a valid value",
+              "valueAndSlice": "Please provide a valid slice or value",
+              "toGreaterThan": "Please provide valid lower and upper limit"
+            }
+          },
+          "multiSelect": {
+            "selectAll" : "Select All",
+            "code" : "Code",
+            "label" : "Label",
+            "searchText" : "Enter the start of code / label"
+          }
+        },
+        "decisionalGrid": {
+          "label": "Decisional Grid",
+          "gridForm": {
+            "fromValue": "From value <i>(inclusive)</i>",
+            "toValue": "To value <i>(exclusive)</i>",
+            "approvalStatus": "Approval status",
+            "needApproval": "Need approval",
+            "color": "Color",
+            "result": "Result",
+            "error": {
+              "requiredLabel": "Please provide a label",
+              "requiredValue": "Please provide a value",
+              "largeValue": "Please provide a value greater than or equal to 'From' value",
+              "overlapping": "Score {{from}}-{{to}} is overlapping {{invalidRangeFrom}}-{{invalidRangeTo}}"
+            }
+          },
+          "gridTable": {
+            "score": "Score",
+            "color": "Color",
+            "result": "Result",
+            "needApproval": "Need approval",
+            "actions": "Actions",
+            "yes":"Yes",
+            "no": "No"
+          }
+        }
+      },
+      "configureScorecardEdit": {
+          "edit": "Edit - {{scoreCardLabel}}",
+          "updateSuccess": "Scorecard successfully updated!!!",
+          "publishSuccess": "Scorecard successfully published!!!",
+          "publishInvalid": "Please provide atleast one question, its answer and a decision grid",
+          "publishComment": "Please provide a publish comment",
+          "deleteConfirm": "Do you want to delete this draft version ?"
+      },
+      "configureScorecardView": {
+        "viewHistory": "View History",
+        "editDraftVersion": "Edit Draft version",
+        "base": {
+          "scorecardType": "Scorecard type:",
+          "displayInDecision": "Display in DECISION widget icon in Intuiz consultation page:",
+          "automatic": "Automatic",
+          "manual": "Manual",
+          "yes": "Yes",
+          "no":"No"
+        }
+      },
+      "configureScorecardHistory": {
+        "label": "History",
+        "version": "Version",
+        "published": "Published",
+        "comment": "Comment",
+        "actions": "Actions",
+        "restore": "Restore",
+        "restoreConfirmationText": "If you restore this version, you will loose any draft for this version of score card. If you wish to proceed, please provide your comment and the click proceed",
+        "currentVersion": "v.{{version}} (current)"
+      },
+      "scorecardTest": {
+        "siren": "Siren",
+        "score": "Score : {{score}}",
+        "testScorecard": "Test Scorecard",
+        "processScorecard": "Process Scorecard",
+        "invalidSiren": "Please provide a SIREN",
+        "notFound": "Result not found!!!",
+        "noDecision": "No Decision found"
+      }
+    },
+    "processing" : "Processing...",
+    "loading" : "Loading...",
+    "modal":{
+      "confirmationTexts":{
+        "activate": "Please provide your comments to proceed with scorecard activation",
+        "deactivate":"Please provide your comments to proceed with scorecard deactivation",
+        "delete":"All the scorecard associated to the user portfolio will be deleted",
+        "duplicate":"Please provide your comments to proceed with scorecard duplication",
+        "deleteAllUserData" : "All the associated user details will be deleted. Please confirm",
+        "reachedMaxScorecardLimit" : "You have reached maximum allowed limit of scorecards. To create a new score card, please delete an existing one",
+        "displayInDecision": "Are you sure you want to display this scorecard in decision widget icon in Intuiz consultation page?"
+      },
+      "messageTexts": {
+        "reCalculatePoup": "Request successfully submitted ... Score changes will be updated in Intuiz once it is completed."
+      },
+      "proceed": "Proceed",
+      "add": "Add",
+      "cancel": "Cancel"
+    },
+    "readmore": {
+      "readmoreLabel": "Read more",
+      "readlessLabel": "Read less"
+    },
+    "login": {
+      "login": "Login",
+      "userName": "User Name",
+      "invalidUserName": "Please enter user name",
+      "password": "Password",
+      "invalidPassword": "Please enter password",
+      "invalidLogin": "Invalid user name or password",
+      "atelierDecisionDescription": "Take advantage of a single source for access to all information on French businesses",
+      "atelierDecision": "Atelier Decision",
+      "welcomeback": "Welcome back",
+      "consumption": "Consumption"
+    }
+}

@@ -1,0 +1,5 @@
+<p [innerHTML]="currentText" class="comment-text"></p>
+<a class="read-more-link" *ngIf="showReadMoreLessLink" (click)="toggleView()">
+    <span *ngIf="isCollapsed" [translate]="'readmore.readmoreLabel'"></span>
+    <span *ngIf="!isCollapsed" [translate]="'readmore.readlessLabel'"></span>
+</a>

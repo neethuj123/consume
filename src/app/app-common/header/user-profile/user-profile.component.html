@@ -1,0 +1,8 @@
+<div class="user-dropdown" (click)="toggleUserDropdown()">
+    <i class="fas fa-user-circle fa-2x"></i>
+    <span class="p-2">{{loggedInUserDetails?.name}}</span>
+    <i class="fas fa-chevron-down"></i>
+    <ul class="top-menu-user-menu" *ngIf="isUserDropdownOpen">
+        <li class="user-menu-logout-action" (click)="logOut($event)"><a href="#" [translate]="'appCommon.header.profile.logout'"></a></li>
+    </ul>
+</div>

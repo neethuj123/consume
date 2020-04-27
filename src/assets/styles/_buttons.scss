@@ -1,0 +1,38 @@
+.btn {
+    border-radius: 0;
+    font-size: 13px;
+    &.btn-primary {
+        background: $btn-primary-color;
+        border-color: $btn-primary-color;
+        &:active {
+            background-color: $btn-primary-dark-color !important;
+            border-color: $btn-primary-dark-color !important;
+        }
+        &:focus {
+            box-shadow: 0 0 0 0.2rem rgba(37, 203, 211, 0.5) !important;
+        }
+        &.btn-primary-outline {
+            background: white;
+            color: #25cbd3;
+        }
+    }
+    &.btn-secondary {
+        background: $btn-secondary-color;
+        border-color: $btn-secondary-color;
+        &:active {
+            background-color: $btn-secondary-dark-color !important;
+            border-color: $btn-secondary-dark-color !important;
+        }
+        &:focus {
+            box-shadow: 0 0 0 0.2rem rgba(0, 87, 111, 0.5) !important;
+        }
+        &.btn-secondary-outline {
+            background: white;
+            color: $btn-secondary-color;
+        }
+    }
+    &.btn-danger {
+        background: #ed1c24;
+        border-color: #ed1c24;
+    }
+}

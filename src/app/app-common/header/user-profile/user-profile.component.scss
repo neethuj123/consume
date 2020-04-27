@@ -1,0 +1,56 @@
+.user-dropdown {
+    $border: 1px solid #edf3f3;
+    position: relative;
+    cursor: pointer;
+    margin: auto;
+    margin-right: 0;
+
+    span {
+        color: #333333;
+        text-decoration: none;
+        font-family: "ITC Avant Garde Gothic W01 Bk", sans-serif;
+        font-size: 13px;
+        vertical-align: super;
+    }
+
+    i {
+        color: #a0a3a5;
+    }
+
+    .fa-chevron-down {
+        vertical-align: super;
+    }
+
+    .top-menu-user-menu {
+        list-style-type: none;
+        margin: 0;
+        margin-top: 13px;
+        padding: 0;
+        display: block;
+        position: absolute;
+        border-bottom: $border;
+        z-index: 101;
+        right: 0px;
+
+        li {
+            display: block;
+            border-top: $border;
+            border-left: $border;
+            border-right: $border;
+            background: #fff;
+            height: 42px;
+            width: 200px;
+            padding: 12px 0 0 20px;
+
+            a {
+                font-family: Arial, sans-serif;
+                font-size: 13px;
+                color: #333333;
+                text-decoration: none;
+                overflow: hidden;
+                max-height: 40px;
+                display: block;
+            }
+        }
+    }
+}

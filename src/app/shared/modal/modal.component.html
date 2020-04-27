@@ -1,0 +1,23 @@
+<div class="modal" [ngClass]="{
+        'fade': showModal,
+        'fade show': showModal
+    }" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closePopUp(false)">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="app-font-bk">{{popUpInput.confirmationText | translate}}</p>
+        <p *ngIf="popUpInput.messageText " [ngClass]="popUpInput.messageClass ? popUpInput.messageClass : 'text-success'" class="app-font-bk mb-4 p-2 text-center">{{popUpInput.messageText | translate}}</p>
+        <textarea *ngIf="popUpInput.showCommentBox" [(ngModel)]="userComment" class="form-control user-comment"></textarea>
+      </div>
+      <div *ngIf="!popUpInput.messageText" class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closePopUp(false)" [translate]="'modal.cancel'"></button>
+        <button type="button" [ngStyle]="{'cursor': popUpInput.showCommentBox && !userComment ? 'not-allowed' : 'default'}" class="btn btn-primary" (click)="closePopUp(true)" [disabled]="(popUpInput.showCommentBox && !userComment)" [translate]="'modal.proceed'"></button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,227 @@
+@import 'variables';
+@import 'buttons';
+@import 'fonts';
+@import 'inputs';
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+body {
+  font-family: ITC Avant Garde Gothic W01 Md, sans-serif;
+	background: $app-body-color;
+}
+.page-container {
+  min-height: calc(100vh - 182px);
+  background-color: $app-body-color; /* For browsers that do not support gradients */
+  background-image: linear-gradient($app-cyan-color 30%, $app-body-color 30%, $app-body-color 30%);
+}
+.app-card {
+  background: #ffffff;
+}
+
+.app-secondary-card {
+    background: #edf3f3;
+    border: 1px #dadcdc solid;
+    padding: 15px;
+}
+
+/** ngx-chips component : Tag-input custom styles **/
+.ng2-tag-input {
+  border-bottom: 2px solid #ffffff !important;
+  padding-left: 0.35rem !important;
+  padding-right: 0.35rem !important;
+  min-height: 45px !important;
+  &.ng2-tag-input--focused {
+      border-bottom: 2px solid $app-cyan-color !important;
+  }
+}
+.ngb-tp-input{
+      width: 41px !important;
+      padding:5px !important;
+}
+.ngb-tp-spacer{
+  width:0px !important;
+}
+tag-input {
+  .error-messages {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+  }
+}
+tag:not(.readonly):not(.tag--editing):focus, tag:not(.readonly):not(.tag--editing):active {
+  background: $app-cyan-color !important;
+}
+tag {
+  border: 1px solid #ced4da !important;
+  line-height: 30px !important;
+  max-width:100% !important
+}
+delete-icon svg {
+  height: 30px !important;
+}
+.modal{
+  background-color:rgba(0,0,0,.4);
+  bottom:0;
+  height:100%;
+  left:0;
+  overflow: hidden;
+  padding: 0 16px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  text-align: center;
+  z-index: 10; /* Adjust according to your needs */
+}
+
+.modal.fade-anim {
+  transition: opacity 400ms ease-in-out;
+  will-change: opacity;
+  opacity: 0;
+}
+
+.modal.fade-anim.in {
+  opacity: 1;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+.modal-content {
+  background-color:#ffffff;
+  border-radius: 4px;
+  margin: 16px auto;
+  max-width: 580px;
+  position: relative;
+  transition: opacity 400ms ease-in-out;
+  width: 100%;
+  will-change: opacity;
+  display: inline-block;
+  text-align: left;
+}
+
+.modal-content-size-m {
+  max-width: 992px;
+}
+
+.modal-content-size-l {
+  max-width: 1200px;
+}
+
+.modal-footer,
+.modal-header {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 56px;
+  padding: 0 16px;
+}
+
+.modal-header {
+  border-bottom:1px solid #cecece;
+}
+
+.modal-body {
+  padding: 16px;
+}
+
+.modal-footer {
+  border-top:1px solid #cecece;
+}
+
+
+
+/* Some button basic styles because i don't want BS in this demo */
+.btn {
+  -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  border-radius: 7px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 14px;
+  background: #37586f;
+  text-decoration: none;
+  border: 1px solid;
+}
+
+
+
+/** Firefox browser UA CSS fix for app **/
+:not(output):-moz-ui-invalid {
+  box-shadow: none;
+}
+
+:not(output):-moz-ui-invalid:-moz-focusring {
+  box-shadow: none;
+}
+/** Fix for Firefox browser **/
+
+/** Font Awesome Free 5.11.2 by @fontawesome - https://fontawesome.com **/
+@import 'font-awesome/fontawesome.scss';
+
+/** ITC Avant Garde Gothic W01 Bk **/
+@font-face {
+  font-family: "ITC Avant Garde Gothic W01";
+  src: url("/assets/fonts/avantgarde/07413afc-2280-4cfc-8860-184839a93fa4.eot?#iefix");
+  src: url("/assets/fonts/avantgarde/07413afc-2280-4cfc-8860-184839a93fa4.eot?#iefix") format("eot"), url("/assets/fonts/avantgarde/6f1146c0-9c0b-4949-866d-9affc396531f.woff2") format("woff2"), url("/assets/fonts/avantgarde/2c50f982-bb73-4891-8d0e-587c1136c2e5.woff") format("woff"), url("/assets/fonts/avantgarde/abf065fe-a1ab-4013-8c49-45ce7f8ac828.ttf") format("truetype"), url("/assets/fonts/avantgarde/33f16cdf-c09a-4344-89ce-e17a5ecf4664.svg#33f16cdf-c09a-4344-89ce-e17a5ecf4664") format("svg");
+  font-weight: 300;
+  font-style: normal; }
+
+/** ITC Avant Garde Gothic W01 Md **/
+@font-face {
+  font-family: "ITC Avant Garde Gothic W01";
+  src: url("/assets/fonts/avantgarde/94b3736a-77b0-4279-b365-b3c70960549b.eot?#iefix");
+  src: url("/assets/fonts/avantgarde/94b3736a-77b0-4279-b365-b3c70960549b.eot?#iefix") format("eot"), url("/assets/fonts/avantgarde/39dda6db-d579-4a2e-b67c-abf7d732b97c.woff2") format("woff2"), url("/assets/fonts/avantgarde/6cf5eb52-bda1-4506-b101-1cb1cb9ac146.woff") format("woff"), url("/assets/fonts/avantgarde/af9bc1b5-0bc5-4c5f-8201-7652aeea386d.ttf") format("truetype"), url("/assets/fonts/avantgarde/9de5564a-6092-48cc-9229-77b0b96674b5.svg#9de5564a-6092-48cc-9229-77b0b96674b5") format("svg");
+  font-weight: 500;
+  font-style: normal; }
+  
+/** ITC Avant Garde Gothic W01 Dm **/
+@font-face {
+  font-family: "ITC Avant Garde Gothic W01";
+  src: url("/assets/fonts/avantgarde/38de0cc0-acad-43e5-b0d6-87171c0915f7.eot?#iefix");
+  src: url("/assets/fonts/avantgarde/38de0cc0-acad-43e5-b0d6-87171c0915f7.eot?#iefix") format("eot"), url("/assets/fonts/avantgarde/8bfba692-98b4-401d-b187-205f59d508cf.woff2") format("woff2"), url("/assets/fonts/avantgarde/29cf02ec-9cbf-449b-abff-06b4ab9b1cc0.woff") format("woff"), url("/assets/fonts/avantgarde/d35364ca-710c-4712-8aed-068488f4fdc1.ttf") format("truetype"), url("/assets/fonts/avantgarde/cf105897-a984-495f-bfd0-c5285f7a495e.svg#cf105897-a984-495f-bfd0-c5285f7a495e") format("svg");
+  font-weight: 600;
+  font-style: normal; }
+
+ /** ITC Avant Garde Gothic W01 Bd **/
+@font-face {
+  font-family: "ITC Avant Garde Gothic W01";
+  src: url("/assets/fonts/avantgarde/7882e98f-91dc-4562-9ae7-89142461ea7d.eot?#iefix");
+  src: url("/assets/fonts/avantgarde/7882e98f-91dc-4562-9ae7-89142461ea7d.eot?#iefix") format("eot"), url("/assets/fonts/avantgarde/4cadb55f-822a-4a35-8918-becfc5a866a3.woff2") format("woff2"), url("/assets/fonts/avantgarde/af007af5-dcfa-465a-a278-47ab3eb9a589.woff") format("woff"), url("/assets/fonts/avantgarde/9a9365bb-bc37-4768-8d00-df0bdf405665.ttf") format("truetype"), url("/assets/fonts/avantgarde/4443cc42-374b-40e5-968c-b29f549f0835.svg#4443cc42-374b-40e5-968c-b29f549f0835") format("svg");
+  font-weight: 700;
+  font-style: normal; }
+ /*****************************************************************************************************************/
+ /** ITC Avant Garde Gothic W01 Bk **/
+@font-face {
+  font-family: "ITC Avant Garde Gothic W01 Bk";
+  src: url("/assets/fonts/avantgarde/07413afc-2280-4cfc-8860-184839a93fa4.eot?#iefix");
+  src: url("/assets/fonts/avantgarde/07413afc-2280-4cfc-8860-184839a93fa4.eot?#iefix") format("eot"), url("/assets/fonts/avantgarde/6f1146c0-9c0b-4949-866d-9affc396531f.woff2") format("woff2"), url("/assets/fonts/avantgarde/2c50f982-bb73-4891-8d0e-587c1136c2e5.woff") format("woff"), url("/assets/fonts/avantgarde/abf065fe-a1ab-4013-8c49-45ce7f8ac828.ttf") format("truetype"), url("/assets/fonts/avantgarde/33f16cdf-c09a-4344-89ce-e17a5ecf4664.svg#33f16cdf-c09a-4344-89ce-e17a5ecf4664") format("svg");
+  font-weight: 300;
+  font-style: normal; }
+
+/** ITC Avant Garde Gothic W01 Md **/
+@font-face {
+  font-family: "ITC Avant Garde Gothic W01 Md";
+  src: url("/assets/fonts/avantgarde/94b3736a-77b0-4279-b365-b3c70960549b.eot?#iefix");
+  src: url("/assets/fonts/avantgarde/94b3736a-77b0-4279-b365-b3c70960549b.eot?#iefix") format("eot"), url("/assets/fonts/avantgarde/39dda6db-d579-4a2e-b67c-abf7d732b97c.woff2") format("woff2"), url("/assets/fonts/avantgarde/6cf5eb52-bda1-4506-b101-1cb1cb9ac146.woff") format("woff"), url("/assets/fonts/avantgarde/af9bc1b5-0bc5-4c5f-8201-7652aeea386d.ttf") format("truetype"), url("/assets/fonts/avantgarde/9de5564a-6092-48cc-9229-77b0b96674b5.svg#9de5564a-6092-48cc-9229-77b0b96674b5") format("svg");
+  font-weight: 500;
+  font-style: normal; }
+  
+/** ITC Avant Garde Gothic W01 Dm **/
+@font-face {
+  font-family: "ITC Avant Garde Gothic W01 Dm";
+  src: url("/assets/fonts/avantgarde/38de0cc0-acad-43e5-b0d6-87171c0915f7.eot?#iefix");
+  src: url("/assets/fonts/avantgarde/38de0cc0-acad-43e5-b0d6-87171c0915f7.eot?#iefix") format("eot"), url("/assets/fonts/avantgarde/8bfba692-98b4-401d-b187-205f59d508cf.woff2") format("woff2"), url("/assets/fonts/avantgarde/29cf02ec-9cbf-449b-abff-06b4ab9b1cc0.woff") format("woff"), url("/assets/fonts/avantgarde/d35364ca-710c-4712-8aed-068488f4fdc1.ttf") format("truetype"), url("/assets/fonts/avantgarde/cf105897-a984-495f-bfd0-c5285f7a495e.svg#cf105897-a984-495f-bfd0-c5285f7a495e") format("svg");
+  font-weight: 600;
+  font-style: normal; }
+
+ /** ITC Avant Garde Gothic W01 Bd **/
+@font-face {
+  font-family: "ITC Avant Garde Gothic W01 Bd";
+  src: url("/assets/fonts/avantgarde/7882e98f-91dc-4562-9ae7-89142461ea7d.eot?#iefix");
+  src: url("/assets/fonts/avantgarde/7882e98f-91dc-4562-9ae7-89142461ea7d.eot?#iefix") format("eot"), url("/assets/fonts/avantgarde/4cadb55f-822a-4a35-8918-becfc5a866a3.woff2") format("woff2"), url("/assets/fonts/avantgarde/af007af5-dcfa-465a-a278-47ab3eb9a589.woff") format("woff"), url("/assets/fonts/avantgarde/9a9365bb-bc37-4768-8d00-df0bdf405665.ttf") format("truetype"), url("/assets/fonts/avantgarde/4443cc42-374b-40e5-968c-b29f549f0835.svg#4443cc42-374b-40e5-968c-b29f549f0835") format("svg");
+  font-weight: 700;
+  font-style: normal; }
