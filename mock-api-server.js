@@ -9,28 +9,11 @@ const middlewares = jsonServer.defaults()
 
 server.use(middlewares)
 server.use(jsonServer.rewriter({
-  '/api/usageInfo': '/usageInfo',
-  '/api/channelFields/':'/channelFields',
-  '/api/productName/':'/productName',
-  '/api/usageStatus/':'/usageStatus',
-  '/api/dummyTable': '/mock-api-response',
-  '/api/adminuser/search/:id': '/adminUserSearch?loginId=:id',
-  '/api/scorecard/:id/test/:siren': '/scorecardTest?siren=:siren',
-  '/api/scorecard/create': '/scorecardsCreate',
-  '/api/scorecard/:id/deletedraft': '/deleteScorecard',
-  '/api/scorecard/:id/draft': '/scorecardsCreate?scoreCardId=:id',
-  '/api/scorecard/:id/published': '/scorecardsCreate?scoreCardId=:id&draftOrPublishIndicator=PUBLISHED',
-  '/api/scorecard/deactivate': '/mock-api-response',
-  '/api/scorecard/activate': '/mock-api-response',
-  '/api/scorecard/setdisplayindicator': '/mock-api-response',
+  '/consumptionService/getInitialData?token=:token': '/getInitialData?token=:token',
+  '/consumptionService/fetchRawUsageUniversalData': '/mock-api-response',
   '/user/login': '/userLogin',
-  '/api/user/logout': '/userLogout',
-  '/api/scorecard/restoreversion': '/scoreCardRestore',
-  '/api/scorecard/:id': '/deleteScorecard',
-  '/api/scorecard/duplicate': '/mock-duplicate-response',
-  '/api/scorecard/allversions/:scoreCardId': '/scoreCardHistory',
-  '/api/codeNafFields/': '/codeNafFields',
-  '/api/scorecardtemplate/:scoreCardId': '/scorecardtemplate'
+  '/consumptionService/user/logout': '/userLogout',
+
 })) 
 router.render = function (req, res) {
   if(req.url.match('adminUserSearch') || req.url.match('scorecardTest')) {

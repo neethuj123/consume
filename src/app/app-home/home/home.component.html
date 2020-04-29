@@ -6,13 +6,11 @@
       <div class="mt-2 right">
                 
                 <input name="typeOfScoreCard" id="or" type="radio"  [disabled]="disableTypeOfScorecard" value ="or" [(ngModel)]="mode">
-                <label for="or" [translate]="'appHome.home.or'"></label>
+                <label class="or-label" for="or" [translate]="'appHome.home.or'"></label>
                 <input name="typeOfScoreCard" id="and" type="radio" [disabled]="disableTypeOfScorecard" value="and" [(ngModel)]="mode">
                 <label class="mr-3" for="and" [translate]="'appHome.home.and'"></label>
             </div>
        <div class="col-md-3 mb-3 right">
-         
-          <!-- <label class="mb-2" for="scorecardDataType" [translate]="'appConfigureScorecard.configureScorecardCreate.questions.dataType'"></label><br> -->
           <select class="col-md-12" [(ngModel)]="questionFormModel.fieldType" (ngModelChange)="changeScorecardSubFields()" name="scorecardDataType">
           
               <option *ngFor="let fieldType of scorecardFields" [value]="fieldType.value">{{fieldType.label}}</option>
@@ -133,8 +131,8 @@
                        [modelAsStrings]="true"
                        [editable]="true"
                        [addOnBlur]="true"
-                       [validators]="validators"
-                       [errorMessages]="errorMessages"
+                       [validators]="userIdvalidators"
+                       [errorMessages]="usererrorMessages"
                        [placeholder]="userPrimaryPlaceholder"
                        [secondaryPlaceholder]="userSecondaryPlaceholder"
                        >
@@ -151,11 +149,11 @@
         <p class="selected" *ngIf ="alreadySelectedText">Already Added this field</p>
     </div>
     <form class="form-inline date-picker" style="display:inline-block;width: 48%;" *ngIf="dateInput">
-      
+        <label class="label-from-time" [translate]="'appHome.home.fromDateTime'"></label>
         <div class="input-group mt-2" style="display:inline-flex;">
-            <input class="form-control angular-mydatepicker" [ngClass]="{'is-invalid': invalidFromDate && invalidDateRange}" name="dateFrom"
+            <input class="form-control angular-mydatepicker" name="dateFrom"
                     angular-mydatepicker #dpFrom="angular-mydatepicker" 
-                    [(ngModel)]="dateFieldFrom" [options]="dateFieldInputOptions" [locale]="defaultLang" required/>
+                    [(ngModel)]="dateFieldFrom" [options]="startDate" [locale]="defaultLang" (dateChanged)="onStartDateChanged(dateFieldFrom)" required/>
             <div class="input-group-append">
                 <button type="button" class="btn btn-secondary" (click)="dpFrom.toggleCalendar()">
                 <i class="fa-calendar-alt far"></i>
@@ -167,10 +165,11 @@
         <!-- <button style="display:none;"class="btn btn-sm btn-outline-{{seconds ? 'success' : 'danger'}}" (click)="toggleSeconds()">
             Seconds - {{seconds ? "ON" : "OFF"}}
         </button> -->
+        <label class="label-to-time" [translate]="'appHome.home.toDateTime'"></label>
          <div class="input-group mt-2" style="display:inline-flex;">
-            <input class="form-control angular-mydatepicker" [ngClass]="{'is-invalid': (invalidToDate && invalidDateRange) || invalidGreaterDate}" name="dateTo"
+            <input class="form-control angular-mydatepicker"  name="dateTo"
                     angular-mydatepicker #dpTo="angular-mydatepicker" 
-                    [(ngModel)]="dateFieldTo" [options]="dateFieldInputOptions" [locale]="defaultLang" required/>
+                    [(ngModel)]="dateFieldTo" [options]="endDate" [locale]="defaultLang" (dateChanged)="onEndDateChanged(dateFieldTo)" required/>
             <div class="input-group-append">
                 <button type="button" class="btn btn-secondary" (click)="dpTo.toggleCalendar()">
                 <i class="fa-calendar-alt far"></i>
@@ -183,6 +182,7 @@
         <!-- <button style="display:none;"class="btn btn-sm btn-outline-{{seconds ? 'success' : 'danger'}}" (click)="toggleSeconds()">
             Seconds - {{seconds ? "ON" : "OFF"}}
         </button> -->
+      <p class="invalid-date-range" *ngIf="invalidRange" [translate]="'appHome.home.invalidDateRange'"></p>
       <button  class="btn btn-primary time-date-btn use-template" [disabled]="dateFieldTo==null &&dateFieldFrom==null" (click)="fetchTableDetailsFromTo(questionFormModel.fieldType,questionFormModel.fieldName,dateFieldTo,dateFieldFrom,fromTime,toTime)"  [translate]="'appHome.home.addValue'"></button>
       <p class="selected" *ngIf ="alreadySelectedDate">Already Added this field</p>
     </form>

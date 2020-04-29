@@ -1,6 +1,8 @@
 import { ApiService } from './../core/api.service';
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
+import { AuthenticationService } from './../core/authentication.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +30,10 @@ export class SharedDataService {
   private processedusageStatusFieldsData = new BehaviorSubject([]);
   private scorecardFieldsData = new BehaviorSubject([]);
 
-  constructor(private apiService: ApiService) { 
+  constructor(private apiService: ApiService,
+              private authenticationService:AuthenticationService
+              ) 
+  { 
   }
 
 
@@ -56,31 +61,32 @@ export class SharedDataService {
 
 
   initScorecardFields() {
-    this.apiService.get('/usageInfo').subscribe((response) => {
-      this.data.scorecardDefinedFields = response;
+    let user = this.authenticationService.user;    
+    this.apiService.get('/getInitialData?token="'+user.token+'"').subscribe((response) => {
+      this.data.scorecardDefinedFields = response.data;
 
-      let rawResource = response[0].fields;
+      let rawResource = response.data[0].fieldDetailsList;
       for(let i =0;i<rawResource.length;i++){
         if(rawResource[i].fieldName=='channel'){
             this.data.channelFieldsDataDefined = rawResource[i].fieldValue;
         }
-        if(rawResource[i].fieldName=='ProductName'){
+        if(rawResource[i].fieldName=='productName'){
             this.data.productFieldsDataDefined = rawResource[i].fieldValue;
         }
-        if(rawResource[i].fieldName=='Status'){
+        if(rawResource[i].fieldName=='status'){
             this.data.usageStatusDataDefined = rawResource[i].fieldValue;
         }
       }
 
-      let processResource = response[1].fields;
+      let processResource = response.data[1].fieldDetailsList;
       for(let i =0;i<processResource.length;i++){
         if(processResource[i].fieldName=='channel'){
             this.data.processedchannelFieldsDataDefined = processResource[i].fieldValue;
         }
-        if(processResource[i].fieldName=='ProductName'){
+        if(processResource[i].fieldName=='productName'){
             this.data.processedproductFieldsDataDefined = processResource[i].fieldValue;
         }
-        if(processResource[i].fieldName=='Status'){
+        if(processResource[i].fieldName=='status'){
             this.data.processedusageStatusDataDefined = processResource[i].fieldValue;
         }
       }

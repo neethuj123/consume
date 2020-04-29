@@ -39,7 +39,13 @@
         "primarySubscribe":"+ Identifiant d'abonné",
         "secondarySubscribe":"Entrez les ID d'abonné",
         "primaryUser":"+Identifiant d'utilisateur",
-        "secondaryUser":"Entrez les ID utilisateur"
+        "secondaryUser":"Entrez les ID utilisateur",
+        "fromDateTime":"De la date et de l'heure",
+         "toDateTime":"À ce jour",
+        "invalidDateRange":"Plage de dates non valide",
+        "alphaNumeric":"La valeur d'entrée doit être alphanumérique / numérique"
+
+
       }
     },
     "appConfigureScorecard": {

@@ -5,7 +5,26 @@
         min-height: 70vh;
     }
 }
-
+.or-label{
+  padding-left: 18px !important;
+  padding-right: 15px !important;
+}
+.invalid-date-range{
+      margin-left: 62px;
+    margin-top: 16px;
+    text-align: center;
+    font-size: 13px;
+    color: red;
+}
+.label-from-time{
+    justify-content: end;
+    margin-left: 65px;
+}
+.label-to-time{
+  justify-content: end;
+    margin-left: 65px;
+    margin-top: 18px;
+}
 .raw-process-head{
     margin-bottom: 20px;
     color: #a2a7a6;
@@ -121,8 +140,8 @@
  display:inline-block;
 }
 .date-picker{
-      margin-bottom: 20px;
-    margin-left: 16px;
+  margin-bottom: 20px;
+  margin-left: 32px;
 }
 .time-date-btn{
   display:block;

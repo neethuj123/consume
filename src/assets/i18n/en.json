@@ -38,7 +38,11 @@
         "primarySubscribe":"+Subscriber Id",
         "secondarySubscribe":"Enter Subscriber Ids",
         "primaryUser":"+User Id",
-        "secondaryUser":"Enter User Ids"
+        "secondaryUser":"Enter User Ids",
+        "fromDateTime":"From Date&Time",
+        "toDateTime":"To Date&Time",
+        "invalidDateRange":"Invalid date range",
+        "alphaNumeric":"Input value should be Alphanumeric/Numeric"
       }
     },
     "appConfigureScorecard": {
