@@ -1,10 +1,7 @@
-
 <div class="page-container pt-5">   
-
     <div class="container p-3 home-container">
       <h1 class="heading"[translate]="'appHome.home.head'"></h1>
-      <div class="mt-2 right">
-                
+      <div class="mt-2 right">                
                 <input name="typeOfScoreCard" id="or" type="radio"  [disabled]="disableTypeOfScorecard" value ="or" [(ngModel)]="mode">
                 <label class="or-label" for="or" [translate]="'appHome.home.or'"></label>
                 <input name="typeOfScoreCard" id="and" type="radio" [disabled]="disableTypeOfScorecard" value="and" [(ngModel)]="mode">
@@ -48,7 +45,7 @@
              <p class="selected" *ngIf ="alreadySelectedIdenti">Already Added this field</p>
         </div> 
     <div class="col-md-12" style="margin-left: 20px;" *ngIf="channelInput">
-     <tag-input class="raw-tag col-md-6" [(ngModel)]="channelItems"
+     <tag-input class="raw-tag col-md-6" [(ngModel)]="channelItems" (ngModelChange)="channelChange(channelItems,channelFinalArray)"
                        [modelAsStrings]="true"
                        [placeholder]="channelPrimaryPlaceholder"
                        [secondaryPlaceholder]="channelSecondaryPlaceholder"
@@ -68,7 +65,7 @@
 
     </div>
     <div class="col-md-12" style="margin-left: 20px;" *ngIf="productInput">
-      <tag-input class="raw-tag col-md-6" [(ngModel)]="productItems"
+      <tag-input class="raw-tag col-md-6" [(ngModel)]="productItems" (ngModelChange)="productChange(productItems,productFinalArray)"
                        [modelAsStrings]="true"
                        [placeholder]="productPrimaryPlaceholder"
                        [secondaryPlaceholder]="productSecondaryPlaceholder"
@@ -89,7 +86,7 @@
         <p class="selected" *ngIf ="alreadySelectedProduct">Already Added this field</p>
     </div>
     <div class="col-md-12" style="margin-left: 20px;" *ngIf="statusInput">
-      <tag-input class="raw-tag col-md-6" [(ngModel)]="statusItems"
+      <tag-input class="raw-tag col-md-6" [(ngModel)]="statusItems" (ngModelChange)="statusChange(statusItems,statusFinalArray)"
                        [modelAsStrings]="true"
                        [placeholder]="statusPrimaryPlaceholder"
                        [secondaryPlaceholder]="statusSecondaryPlaceholder"

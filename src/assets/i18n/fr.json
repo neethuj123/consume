@@ -31,6 +31,7 @@
         "primaryRaw":"+Identifiant",
         "secondaryRaw":"Entrez des identifiants",
         "primaryChannel":"+Canal",
+        "NoData":"Pas de données disponibles",
         "secondaryChannel":"Sélectionnez les chaînes",
         "primaryProduct":"+Produit",
         "secondaryProduct":"Sélectionnez les produits",

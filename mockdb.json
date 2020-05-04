@@ -53,16 +53,17 @@
             "fieldLabel": " Product Name",
             "fieldName": "productName",
             "fieldType": " string",
-            "fieldValue": [
-              "product1",
-              "product2"
-            ]
+            "fieldValue": []
           },
           {
             "fieldLabel": " Contract Date",
             "fieldName": "contractDate",
             "fieldType": " string",
-            "fieldValue": []
+            "fieldValue": [
+              "product1",
+              "product2",
+              "product3"
+            ]
           }
         ]
       },
@@ -105,7 +106,7 @@
             "fieldValue": [
               "read",
               "write",
-              "readorWrite"
+              "readorwrite"
             ]
           },
           {
@@ -118,47 +119,38 @@
             "fieldLabel": " Product Name",
             "fieldName": "productName",
             "fieldType": " string",
-            "fieldValue": [
-              "product1",
-              "product2",
-              "product3"
-            ]
+            "fieldValue": []
           }
         ]
       }
     ]
   },
   "mock-api-response": {
-    "dateField": "contractDate",
-    "fromDate": "2020-04-29T17:10:50.000Z",
+    "dateField": "",
+    "fromDate": "",
     "globalOperation": "and",
     "pageNumber": 0,
     "recordsPerPage": 10,
-    "toDate": "2020-04-29T17:10:50.000Z",
+    "toDate": "",
     "universalQueryCriteria": [
       [
         {
-          "fieldName": "subscriberId",
-          "listValue": [
-            "qwewqe",
-            "3434"
-          ],
-          "type": " string"
-        },
-        {
-          "fieldName": "rawUsageIdentifier",
-          "listValue": [
-            "324234",
-            "324324"
-          ],
-          "type": " string"
-        },
-        {
           "fieldName": "status",
           "listValue": [
-            "readorWrite"
+            "read",
+            "write",
+            "readorwrite"
           ],
           "type": "string"
+        },
+        {
+          "fieldName": "channel",
+          "listValue": [
+            "\"channel1\"",
+            " \"channel3\"",
+            " \"channel2\""
+          ],
+          "type": " string"
         }
       ]
     ],

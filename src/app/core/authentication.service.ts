@@ -24,7 +24,7 @@ export class AuthenticationService {
     }
 
     login(userName: string, password: string) {
-        return this.apiService.post('/../user/login', {userName, password})
+        return this.apiService.post('/user/login', {userName, password})
                 .pipe(map(user => {
                     this.setUserDetails(user);
                     return user;

@@ -313,6 +313,30 @@ export class HomeComponent implements OnInit {
             this.processed = false;
         }
     }
+    channelChange(channelItems,channelFinalArray){
+        if(channelItems.length == channelFinalArray.length){
+            this.channelPrimaryPlaceholder = this.translateService.instant('appHome.home.NoData');
+        }
+        else{
+            this.channelPrimaryPlaceholder = this.translateService.instant('appHome.home.primaryChannel');  
+        }       
+    }
+    productChange(productItems,productFinalArray){
+         if(productItems.length == productFinalArray.length){
+            this.productPrimaryPlaceholder = this.translateService.instant('appHome.home.NoData');
+        }
+        else{
+            this.productPrimaryPlaceholder = this.translateService.instant('appHome.home.primaryProduct');  
+        }    
+    }
+    statusChange(statusItems,statusFinalArray){
+        if(statusItems.length == statusFinalArray.length){
+            this.statusPrimaryPlaceholder = this.translateService.instant('appHome.home.NoData');
+        }
+        else{
+            this.statusPrimaryPlaceholder = this.translateService.instant('appHome.home.primaryStatus');  
+        }  
+    }
     addNewQuestion() {
         this.invalidRange = false;
         this.showFilterBlock = true;
@@ -330,17 +354,28 @@ export class HomeComponent implements OnInit {
         }
         if (this.questionFormModel.fieldName == "channel") {
             this.channelFinalArray = [];
-            if (this.questionFormModel.fieldType == "RAW") {
+            if (this.questionFormModel.fieldType == "Raw") {
                 this.channelArray.forEach((channel: any) => {
                     this.channelFinalArray.push(channel);
                 });
+                if( this.channelFinalArray.length == 0){
+                    this.channelSecondaryPlaceholder = this.translateService.instant('appHome.home.NoData');
+                }
+                else{
+                 this.channelSecondaryPlaceholder = this.translateService.instant('appHome.home.secondaryChannel');
+                }
             } else {
                 this.processchannelArray.forEach((channel: any) => {
                     this.channelFinalArray.push(channel);
                 });
+                if( this.channelFinalArray.length == 0){
+                    this.channelSecondaryPlaceholder = this.translateService.instant('appHome.home.NoData');
+                }
+                else{
+                 this.channelSecondaryPlaceholder = this.translateService.instant('appHome.home.secondaryChannel');
+                }
             }
-            this.channelPrimaryPlaceholder = this.translateService.instant('appHome.home.primaryChannel');
-            this.channelSecondaryPlaceholder = this.translateService.instant('appHome.home.secondaryChannel');
+           
             this.channelInput = true;
             this.subscribeInput = false;
             this.alphaInput = false;
@@ -356,13 +391,23 @@ export class HomeComponent implements OnInit {
                 this.statusArray.forEach((status: any) => {
                     this.statusFinalArray.push(status);
                 });
+                if( this.statusFinalArray.length == 0){
+                    this.statusSecondaryPlaceholder = this.translateService.instant('appHome.home.NoData');
+                }
+                else{
+                 this.statusSecondaryPlaceholder = this.translateService.instant('appHome.home.secondaryStatus');
+                }
             } else {
                 this.processstatusArray.forEach((status: any) => {
                     this.statusFinalArray.push(status);
                 });
+                if( this.statusFinalArray.length == 0){
+                    this.statusSecondaryPlaceholder = this.translateService.instant('appHome.home.NoData');
+                }
+                else{
+                  this.statusSecondaryPlaceholder = this.translateService.instant('appHome.home.secondaryStatus');
+                }
             }
-            this.statusPrimaryPlaceholder = this.translateService.instant('appHome.home.primaryStatus')
-            this.statusSecondaryPlaceholder = this.translateService.instant('appHome.home.secondaryStatus');
             this.statusInput = true;
             this.channelInput = false;
             this.subscribeInput = false;
@@ -378,13 +423,23 @@ export class HomeComponent implements OnInit {
                 this.productArray.forEach((product: any) => {
                     this.productFinalArray.push(product);
                 });
+                if( this.productFinalArray.length == 0){
+                    this.productSecondaryPlaceholder = this.translateService.instant('appHome.home.NoData');
+                }
+                else{
+                  this.productSecondaryPlaceholder = this.translateService.instant('appHome.home.secondaryProduct');
+                }
             } else {
                 this.processproductArray.forEach((product: any) => {
                     this.productFinalArray.push(product);
                 });
+                if( this.productFinalArray.length == 0){
+                    this.productSecondaryPlaceholder = this.translateService.instant('appHome.home.NoData');
+                }
+                else{
+                    this.productSecondaryPlaceholder = this.translateService.instant('appHome.home.secondaryProduct');
+                }
             }
-            this.productPrimaryPlaceholder = this.translateService.instant('appHome.home.primaryProduct');
-            this.productSecondaryPlaceholder = this.translateService.instant('appHome.home.secondaryProduct');
             this.productInput = true;
             this.channelInput = false;
             this.subscribeInput = false;
@@ -651,6 +706,7 @@ export class HomeComponent implements OnInit {
             input: this.date
         }
     }
+
     downloadUsageInfo(fieldType, fieldValue) {
         this.fieldFormatValues = [];
         fieldValue.forEach((values: any) => {
