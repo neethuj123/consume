@@ -724,10 +724,9 @@ export class HomeComponent implements OnInit {
             "toDate": this.toTimeInFormat,
             "universalQueryCriteria": [
                 this.fieldFormatValues
-            ],
-            "token": this.user.token
+            ]
         }
-        this.apiService.post('/fetchRawUsageUniversalData', this.data).subscribe((response) => {
+        this.apiService.post('/downloadDate', this.data).subscribe((response) => {
         
 
         });

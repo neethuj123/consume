@@ -62,7 +62,8 @@ export class SharedDataService {
 
   initScorecardFields() {
     let user = this.authenticationService.user;    
-    this.apiService.get('/getInitialData?token="'+user.token+'"').subscribe((response) => {
+    this.apiService.post('/getInitialData',
+                    { "password": "Altaneet92","userName": "jn"}).subscribe((response) => {
       this.data.scorecardDefinedFields = response.data;
 
       let rawResource = response.data[0].fieldDetailsList;

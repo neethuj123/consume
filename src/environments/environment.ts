@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   defaultLang: 'fr',
-  apiUrl: 'http://localhost:3000/consumptionService'
+  apiUrl: '/consumptionService'
 };
 
 /*

@@ -7,6 +7,7 @@
 body {
   font-family: ITC Avant Garde Gothic W01 Md, sans-serif;
 	background: $app-body-color;
+  font-size:12px;
 }
 .page-container {
   min-height: calc(100vh - 182px);
@@ -144,7 +145,7 @@ delete-icon svg {
   border-radius: 7px;
   font-family: Arial;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 12px;
   background: #37586f;
   text-decoration: none;
   border: 1px solid;
