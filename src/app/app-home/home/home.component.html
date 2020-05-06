@@ -145,7 +145,7 @@
         <button class="btn btn-primary use-template" [disabled]="!searchText" (click)="fetchTableDetailsText(questionFormModel.fieldType,questionFormModel.fieldName,searchText)" [translate]="'appHome.home.addValue'"></button>
         <p class="selected" *ngIf ="alreadySelectedText">Already Added this field</p>
     </div>
-    <form class="form-inline date-picker" style="display:inline-block;width: 48%;" *ngIf="dateInput">
+    <form class="form-inline date-picker" style="display:inline-block;width:54%;" *ngIf="dateInput">
         <label class="label-from-time" [translate]="'appHome.home.fromDateTime'"></label>
         <div class="input-group mt-2" style="display:inline-flex;">
             <input class="form-control angular-mydatepicker" name="dateFrom"

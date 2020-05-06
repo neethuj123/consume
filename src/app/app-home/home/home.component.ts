@@ -153,7 +153,7 @@ export class HomeComponent implements OnInit {
     statusFinalArray;
     productFinalArray;
     mode = "or";
-    dateFieldName = '';
+    dateFieldName = null;
     dateFieldFrom: IMyDateModel = null;
     dateFieldTo: IMyDateModel = null;
     public mytime: Date = new Date();
@@ -169,8 +169,8 @@ export class HomeComponent implements OnInit {
 
     };
     alphaNumericText;
-    fromTimeInFormat='';
-    toTimeInFormat='';
+    fromTimeInFormat=null;
+    toTimeInFormat=null;
     private questionFormModelDefault = {
         fieldType: '',
         fieldName: '',
@@ -717,23 +717,29 @@ export class HomeComponent implements OnInit {
         }) => fieldName !== 'contractDate');
         this.data = {
             "dateField": this.dateFieldName,
-            "fromDate": this.fromTimeInFormat,
+            "fromDate": this.toTimeInFormat,
             "globalOperation": this.mode,
             "pageNumber": 0,
-            "recordsPerPage": 10,
-            "toDate": this.toTimeInFormat,
-            "universalQueryCriteria": [
+            "recordsPerPage": 0,
+            "toDate":this.fromTimeInFormat,
+            "universalQueryCriteria": 
                 this.fieldFormatValues
-            ]
+            
         }
-        this.apiService.post('/downloadDate', this.data).subscribe((response) => {
+        this.apiService.post('/downlaodData', this.data).subscribe((response) => {
         
-
+            if(response.data==null){
+                    this.showNoData();
+            }
         });
     }
 
     //modal
-
+    showNoData() {
+        this.SimpleModalService.addModal(AlertComponent, {
+            message: 'Aucune donnée disponible pour ces valeurs de champ !!!'
+        });
+    }
     showAlert() {
         this.SimpleModalService.addModal(AlertComponent, {
             title: 'Déjà ajouté',

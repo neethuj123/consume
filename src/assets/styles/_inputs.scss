@@ -12,7 +12,7 @@ input:-ms-input-placeholder {
 }
 input.form-control {
     border-radius: 0;
-    font-size: 13px;
+    font-size: 11px;
     &:focus {
         border-color: #25cbd3;
         box-shadow: 0 0 0 0.2rem rgba(37, 203, 211, 0.5);
@@ -160,5 +160,5 @@ select {
 
 }
 label {
-  font-size: 13px;
+  font-size: 11px;
 }
