@@ -1,6 +1,6 @@
 {
     "/consumptionService/*" : {
-    "target": "http://vm-intuiz101:8191",
+    "target": "http://vm-search003:8198",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true

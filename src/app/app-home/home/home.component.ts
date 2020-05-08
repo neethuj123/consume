@@ -19,6 +19,7 @@ import {
 import {
     TranslateService
 } from '@ngx-translate/core';
+import * as fileSaver from 'file-saver';
 import {
     NgbModule,
     NgbPaginationModule,
@@ -153,6 +154,7 @@ export class HomeComponent implements OnInit {
     statusFinalArray;
     productFinalArray;
     mode = "or";
+    queryType;
     dateFieldName = null;
     dateFieldFrom: IMyDateModel = null;
     dateFieldTo: IMyDateModel = null;
@@ -715,29 +717,46 @@ export class HomeComponent implements OnInit {
         this.fieldFormatValues = this.fieldFormatValues.filter(({
             fieldName
         }) => fieldName !== 'contractDate');
-        this.data = {
-            "dateField": this.dateFieldName,
-            "fromDate": this.toTimeInFormat,
-            "globalOperation": this.mode,
-            "pageNumber": 0,
-            "recordsPerPage": 0,
-            "toDate":this.fromTimeInFormat,
-            "universalQueryCriteria": 
-                this.fieldFormatValues
-            
+        if(fieldType=='Raw'){
+            this.queryType='raw'
         }
-        this.apiService.post('/downlaodData', this.data).subscribe((response) => {
-        
-            if(response.data==null){
-                    this.showNoData();
+        else{
+            this.queryType='processed'
+        }
+        this.data ={
+          "dateField": "orderedDate",
+          "fromDate": "2019-04-22T08:41:53.809Z",
+          "globalOperation": "and",
+          "queryType": "raw",
+          "toDate": "2020-04-22T08:41:53.809Z",
+          "universalQueryCriteria": [
+            {
+              "fieldName": "channel",
+              "listValue": [
+                "WEB"
+              ],
+              "type": "string"
             }
-        });
-    }
+          ]
+        }
+    this.apiService.postDownload('/downlaodData', this.data).subscribe((response) => {
+        console.log(response)
+        if(response.body.indexOf('statusMessage')!=-1){
+            this.showNoData();
+        }
+        else{
+            const filename = response.headers.get('content-disposition');
+            const blob = new Blob([response.body], {type: 'text/csv; charset=utf-8'});
+            fileSaver.saveAs(blob, 'download.csv'); 
+        }
+                     
+    });
+}
 
     //modal
     showNoData() {
         this.SimpleModalService.addModal(AlertComponent, {
-            message: 'Aucune donnée disponible pour ces valeurs de champ !!!'
+            message: 'No Response or data response count exceeded the limit !!!'
         });
     }
     showAlert() {

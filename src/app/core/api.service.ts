@@ -8,11 +8,17 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
   httpOptions;
-
+httpOptionsDownload;
   constructor(private http: HttpClient) {
     this.httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json'
+      })
+    };
+    this.httpOptionsDownload = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+
       })
     };
   }
@@ -29,6 +35,19 @@ export class ApiService {
       `${environment.apiUrl}${path}`,
       data,
       this.httpOptions
+    );
+  }
+  postDownload(path: string, data = {}): Observable<any> {
+  let headers = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/json');
+    return this.http.post(
+      `${environment.apiUrl}${path}`,
+      data,
+      {
+      headers: headers,
+      observe: 'response',
+      responseType: 'text'
+    }
     );
   }
 
