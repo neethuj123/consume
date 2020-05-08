@@ -17,6 +17,12 @@ import {
     Router
 } from '@angular/router';
 import {
+    AlertComponent
+} from './../../modal/alert/alert.component';
+import {
+    SimpleModalService
+} from 'ngx-simple-modal';
+import {
     TranslateService
 } from '@ngx-translate/core';
 import * as fileSaver from 'file-saver';
@@ -38,24 +44,15 @@ import {
     IAngularMyDpOptions,
     IMyDateModel
 } from 'angular-mydatepicker';
-import {
-    SimpleModalComponent
-} from 'ngx-simple-modal';
-import {
-    AlertComponent
-} from './../../modal/alert/alert.component';
-import {
-    SimpleModalService
-} from 'ngx-simple-modal';
+
+
 import {
     NgbDatepickerI18n,
     NgbTimeStruct,
     NgbDateStruct,
     NgbDatepickerConfig
 } from '@ng-bootstrap/ng-bootstrap';
-import {
-    IDropdownSettings
-} from 'ng-multiselect-dropdown';
+
 import {
     AuthenticationService
 } from './../../core/authentication.service';
@@ -194,8 +191,8 @@ export class HomeComponent implements OnInit {
         private _route: ActivatedRoute,
         private calendar: NgbCalendar,
         public formatter: NgbDateParserFormatter,
-        private config: NgbDatepickerConfig,
         private SimpleModalService: SimpleModalService,
+        private config: NgbDatepickerConfig,
         private authenticationService: AuthenticationService,
         public datepipe: DatePipe
     ) {
@@ -592,7 +589,7 @@ export class HomeComponent implements OnInit {
             })
 
         } else {
-            this.showAlert();
+            this.showAlert()
         }
 
 
@@ -606,7 +603,7 @@ export class HomeComponent implements OnInit {
                 type: this.questionFormModel.dataType
             })
         } else {
-            this.showAlert();
+            this.showAlert()
         }
     }
 
@@ -618,7 +615,7 @@ export class HomeComponent implements OnInit {
                 type: this.questionFormModel.dataType
             })
         } else {
-            this.showAlert();
+            this.showAlert()
         }
     }
 
@@ -630,7 +627,7 @@ export class HomeComponent implements OnInit {
                 type: this.questionFormModel.dataType
             })
         } else {
-            this.showAlert();
+            this.showAlert()
         }
     }
 
@@ -648,7 +645,7 @@ export class HomeComponent implements OnInit {
                 type: this.questionFormModel.dataType
             })
         } else {
-            this.showAlert();
+            this.showAlert()
         }
     }
     fetchTableDetailsText(fieldType, fieldName, textInput) {
@@ -659,7 +656,7 @@ export class HomeComponent implements OnInit {
                 type: this.questionFormModel.dataType
             })
         } else {
-            this.showAlert();
+            this.showAlert()
         }
     }
     onStartDateChanged(dateFieldFrom) {
@@ -695,7 +692,7 @@ export class HomeComponent implements OnInit {
                     type: this.questionFormModel.dataType
                 });
             } else {
-                this.showAlert();
+                this.showAlert()
             }
         }
         this.date = {
@@ -724,20 +721,14 @@ export class HomeComponent implements OnInit {
             this.queryType='processed'
         }
         this.data ={
-          "dateField": "orderedDate",
-          "fromDate": "2019-04-22T08:41:53.809Z",
-          "globalOperation": "and",
-          "queryType": "raw",
-          "toDate": "2020-04-22T08:41:53.809Z",
-          "universalQueryCriteria": [
-            {
-              "fieldName": "channel",
-              "listValue": [
-                "WEB"
-              ],
-              "type": "string"
-            }
-          ]
+            "queryType":this.queryType,
+            "dateField": this.dateFieldName,
+            "fromDate": this.fromTimeInFormat,
+            "globalOperation": this.mode,
+            "pageNumber": 0,
+            "recordsPerPage": 0,
+            "toDate": this.toTimeInFormat,
+            "universalQueryCriteria":this.fieldFormatValues
         }
     this.apiService.postDownload('/downlaodData', this.data).subscribe((response) => {
         console.log(response)
@@ -752,8 +743,7 @@ export class HomeComponent implements OnInit {
                      
     });
 }
-
-    //modal
+//modal
     showNoData() {
         this.SimpleModalService.addModal(AlertComponent, {
             message: 'No Response or data response count exceeded the limit !!!'
@@ -765,4 +755,6 @@ export class HomeComponent implements OnInit {
             message: 'Le champ est déjà ajouté, veuillez le supprimer de la liste pour en ajouter de nouveaux !!!'
         });
     }
+
+   
 }

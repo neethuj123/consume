@@ -2,9 +2,9 @@
     <div class="container p-3 home-container">
       <h1 class="heading"[translate]="'appHome.home.head'"></h1>
       <div class="mt-2 right">                
-                <input name="typeOfScoreCard" id="or" type="radio"  [disabled]="disableTypeOfScorecard" value ="or" [(ngModel)]="mode">
+                <input name="typeOfScoreCard" id="or" type="radio" value ="or" [(ngModel)]="mode">
                 <label class="or-label" for="or" [translate]="'appHome.home.or'"></label>
-                <input name="typeOfScoreCard" id="and" type="radio" [disabled]="disableTypeOfScorecard" value="and" [(ngModel)]="mode">
+                <input name="typeOfScoreCard" id="and" type="radio" value="and" [(ngModel)]="mode">
                 <label class="mr-3" for="and" [translate]="'appHome.home.and'"></label>
             </div>
        <div class="col-md-3 mb-3 right">
@@ -156,7 +156,7 @@
                 <i class="fa-calendar-alt far"></i>
                 </button>
             </div>
-            <div *ngIf="invalidFromDate && invalidDateRange" class="invalid-feedback" [translate]="'appConfigureScorecard.configureScorecardCreate.questions.ptsForQuestion.error.requiredFromDate'"></div>
+            <div class="invalid-feedback" [translate]="'appConfigureScorecard.configureScorecardCreate.questions.ptsForQuestion.error.requiredFromDate'"></div>
         </div>
         <ngb-timepicker class="time-picker-from" [(ngModel)]="fromTime" [spinners]="false" [seconds]="true" name="timeFrom"></ngb-timepicker>
         <!-- <button style="display:none;"class="btn btn-sm btn-outline-{{seconds ? 'success' : 'danger'}}" (click)="toggleSeconds()">
@@ -172,8 +172,8 @@
                 <i class="fa-calendar-alt far"></i>
                 </button>
             </div>
-            <div *ngIf="invalidToDate && invalidDateRange" class="invalid-feedback" [translate]="'appConfigureScorecard.configureScorecardCreate.questions.ptsForQuestion.error.requiredToDate'"></div>
-            <div *ngIf="invalidGreaterDate" class="invalid-feedback" [translate]="'appConfigureScorecard.configureScorecardCreate.questions.ptsForQuestion.error.requiredGreaterDate'"></div>
+            <div class="invalid-feedback" [translate]="'appConfigureScorecard.configureScorecardCreate.questions.ptsForQuestion.error.requiredToDate'"></div>
+            <div class="invalid-feedback" [translate]="'appConfigureScorecard.configureScorecardCreate.questions.ptsForQuestion.error.requiredGreaterDate'"></div>
         </div>
          <ngb-timepicker class="time-picker-from" [(ngModel)]="toTime" [spinners]="false" [seconds]="true" name="timeTo"></ngb-timepicker>
         <!-- <button style="display:none;"class="btn btn-sm btn-outline-{{seconds ? 'success' : 'danger'}}" (click)="toggleSeconds()">

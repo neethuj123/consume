@@ -11,7 +11,6 @@ import { AngularMyDatePickerModule } from 'angular-mydatepicker';
 import { TagInputModule } from 'ngx-chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SimpleModalModule } from 'ngx-simple-modal';
-import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { DatePipe } from '@angular/common'
 
 
@@ -28,8 +27,8 @@ import { DatePipe } from '@angular/common'
     TagInputModule,
     AngularMyDatePickerModule,
     BrowserAnimationsModule,
-    NgMultiSelectDropDownModule.forRoot(),
     SimpleModalModule.forRoot({container: "modal-container"})
+
   ],
   providers: [DatePipe]
 })

@@ -27,8 +27,8 @@ import { AlertComponent } from './modal/alert/alert.component';
     AppHistoryComponent,
     AlertComponent
   ],
-    entryComponents: [AlertComponent],
-  imports: [
+   entryComponents: [AlertComponent],
+    imports: [
     BrowserModule,
     FormsModule,
     MatToolbarModule,
