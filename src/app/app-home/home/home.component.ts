@@ -728,7 +728,8 @@ export class HomeComponent implements OnInit {
             "pageNumber": 0,
             "recordsPerPage": 0,
             "toDate": this.toTimeInFormat,
-            "universalQueryCriteria":this.fieldFormatValues
+            "universalQueryCriteria":this.fieldFormatValues,
+            "token":this.user.token
         }
     this.apiService.postDownload('/downlaodData', this.data).subscribe((response) => {
         console.log(response)

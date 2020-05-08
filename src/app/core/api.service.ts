@@ -12,7 +12,7 @@ httpOptionsDownload;
   constructor(private http: HttpClient) {
     this.httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json'
+        'Content-Type':  'application/json',
       })
     };
     this.httpOptionsDownload = {
