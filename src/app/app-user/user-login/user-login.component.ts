@@ -15,6 +15,7 @@ export class UserLoginComponent implements OnInit {
   invalidLogin = false;
   validated;
   showLoginForm = false;
+  showLoginLoading = false;
 
   constructor(
     private apiService: ApiService,
@@ -37,10 +38,12 @@ export class UserLoginComponent implements OnInit {
 
   login() {
     this.invalidLogin = false;
+    this.showLoginLoading = true;
     if (this.validateInput()) {
       this.authenticationService.login(this.username, this.password)
         .subscribe(data => {
             this.router.navigateByUrl('/home');
+            this.showLoginLoading = false;
         }, () => {
             this.invalidLogin = true;
         });

@@ -151,6 +151,7 @@ export class HomeComponent implements OnInit {
     statusFinalArray;
     productFinalArray;
     mode = "or";
+    showLoading = false;
     queryType;
     dateFieldName = null;
     dateFieldFrom: IMyDateModel = null;
@@ -707,6 +708,7 @@ export class HomeComponent implements OnInit {
     }
 
     downloadUsageInfo(fieldType, fieldValue) {
+        this.showLoading = true;
         this.fieldFormatValues = [];
         fieldValue.forEach((values: any) => {
             this.fieldFormatValues.push(values);
@@ -728,18 +730,20 @@ export class HomeComponent implements OnInit {
             "pageNumber": 0,
             "recordsPerPage": 0,
             "toDate": this.toTimeInFormat,
-            "universalQueryCriteria":this.fieldFormatValues,
-            "token":this.user.token
+            "universalQueryCriteria":this.fieldFormatValues
         }
-    this.apiService.postDownload('/downlaodData', this.data).subscribe((response) => {
+    this.apiService.postDownload('/downloadData', this.data).subscribe((response) => {
         console.log(response)
+
         if(response.body.indexOf('statusMessage')!=-1){
+            this.showLoading = false;
             this.showNoData();
         }
         else{
             const filename = response.headers.get('content-disposition');
             const blob = new Blob([response.body], {type: 'text/csv; charset=utf-8'});
             fileSaver.saveAs(blob, 'download.csv'); 
+            this.showLoading = false;
         }
                      
     });

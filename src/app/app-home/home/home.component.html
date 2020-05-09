@@ -1,4 +1,4 @@
-<div class="page-container pt-5">   
+<div class="page-container pt-5">  
     <div class="container p-3 home-container">
       <h1 class="heading"[translate]="'appHome.home.head'"></h1>
       <div class="mt-2 right">                
@@ -199,10 +199,14 @@
                     </span>
                 </ng-template>
                       </tag-input>
-          <img class="download"  src="./../../../assets/img/file-download-icon.png"  (click)="downloadUsageInfo(questionFormModel.fieldType,itemsAsObjects)">
+         
+          <div>
+           <img class="download"  src="./../../../assets/img/file-download-icon.png"  (click)="downloadUsageInfo(questionFormModel.fieldType,itemsAsObjects)">
           <button class="btn btn-primary use-template" disabled  [translate]="'appHome.home.view'"></button>
            <!-- <button class="btn btn-primary use-template" [disabled]="itemsAsObjects.length==0" (click)="downloadUsageInfo(questionFormModel.fieldType,itemsAsObjects)"  [translate]="fetchingTemplateInProgress ? 'processing' : 'appCommon.header.search'"></button> -->
         </div>
+           <img *ngIf="showLoading" width="40" style="margin-left: 39px;" src="./../../../assets/img/blue_loading.gif">
+
           <div class="modal-container"></div>
 
 <!-- start of filter and table  -->

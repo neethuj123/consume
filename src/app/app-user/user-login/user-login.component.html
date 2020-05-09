@@ -35,6 +35,7 @@
                             <div class="margin-bottom-20">
                                 <button class="btn btn-primary mr-3" (click)="login()" [translate]="'login.login'"></button>
                             </div>
+                            <img *ngIf=showLoginLoading width="40" style="margin-left: 42%;" src="./../../../assets/img/blue_loading.gif">
                         </div>
                         <div class=" mx-auto">
                             <p class="login-footer mx-5 pt-3 text-black-50 text-center" [translate]="'appCommon.footer.text'" [translateParams]="{currentYear: currentYear}"></p>
