@@ -7,7 +7,7 @@
                     <h5 class="app-font-bk h-atelier p-3 h1 my-auto text-center text-white" [translate]="'login.atelierDecision'"></h5>
                 </div> -->
                 <div class="col p-0">
-                    <div class="bg-white p-5 m-0 app-font-bk">
+                    <div class="p-5 m-0 app-font-bk">
                         <div class="mx-auto">
                             <img class="d-flex login-logo mb-1 mx-auto" width="150" alt="Data Altatres" src="assets/img/Logo-dark-wp.png">
                             <img class="d-flex login-main-logo mb-1 mx-auto" style="padding-bottom: 24px"width="200" alt="Data Altatres" src="assets/img/logo.png">
@@ -16,29 +16,29 @@
                         </div>                        
                         <div class="login-form mx-auto">
                             <div class="margin-bottom-20">
-                                <label class="mb-2 login-page-label app-font-md" for="usernameText" [translate]="'login.userName'"></label>
+                               <!--  <label class="mb-2 login-page-label app-font-md" for="usernameText" [translate]="'login.userName'"></label> -->
                                 <div class="input-container">
                                     <span><i class="fa fa-user ml-2"></i></span>
-                                    <input [ngClass]="{'is-invalid': validated && usernameText?.errors?.required}" class="form-control mb-2 login-page-input" [(ngModel)]="username" (keyup.enter)="login()" name="usernameText" #usernameText="ngModel" type="text" required/>
+                                    <input placeholder="{{'login.userName'| translate }}" [ngClass]="{'is-invalid': validated && usernameText?.errors?.required}" class="form-control mb-2 login-page-input" [(ngModel)]="username" (keyup.enter)="login()" name="usernameText" #usernameText="ngModel" type="text" required/>
                                 </div>
                                 <div *ngIf="validated && usernameText?.errors?.required" class="invalid-feedback" [translate]="'login.invalidUserName'"></div>
                             </div>
                             <div class="margin-bottom-20">
-                                <label class="mb-2 login-page-label app-font-md" [translate]="'login.password'"></label>
+                                <!-- <label class="mb-2 login-page-label app-font-md" [translate]="'login.password'"></label> -->
                                 <div class="input-container">
                                     <span><i class="fa fa-lock  ml-2"></i></span>
-                                    <input [ngClass]="{'is-invalid': validated && passwordText?.errors?.required}" class="form-control mb-2 login-page-input" [(ngModel)]="password" (keyup.enter)="login()" name="passwordText" #passwordText="ngModel" type="password" required/>
+                                    <input placeholder="{{'login.password'| translate }}" [ngClass]="{'is-invalid': validated && passwordText?.errors?.required}" class="form-control mb-2 login-page-input" [(ngModel)]="password" (keyup.enter)="login()" name="passwordText" #passwordText="ngModel" type="password" required/>
                                 </div>
                                 <div *ngIf="validated && passwordText?.errors?.required" class="invalid-feedback" [translate]="'login.invalidPassword'"></div>
                             </div>
                             <p class="invalid-feedback mb-3 app-font-md" *ngIf="invalidLogin" [translate]="'login.invalidLogin'"></p>
                             <div class="margin-bottom-20">
-                                <button class="btn btn-primary mr-3" (click)="login()" [translate]="'login.login'"></button>
+                                <button class="btn btn-primary mr-3 login-btn" (click)="login()" [translate]="'login.login'"></button>
                             </div>
                             <img *ngIf=showLoginLoading width="40" style="margin-left: 42%;" src="./../../../assets/img/blue_loading.gif">
                         </div>
                         <div class=" mx-auto">
-                            <p class="login-footer mx-5 pt-3 text-black-50 text-center" [translate]="'appCommon.footer.text'" [translateParams]="{currentYear: currentYear}"></p>
+                            <p class="login-footer mx-5 pt-3 text-white-50 text-center" [translate]="'appCommon.footer.text'" [translateParams]="{currentYear: currentYear}"></p>
                         </div>
                     </div>
                 </div>

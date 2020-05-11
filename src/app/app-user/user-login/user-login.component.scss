@@ -9,7 +9,11 @@
     color: #333333;
     padding: 8px 10px 8px 40px;
     background: #ffffff;
-    font-size:14px
+    font-size:14px;
+    border-radius:38px !important;
+}
+.login-btn{
+    border-radius: 38px !important;
 }
 .margin-bottom-20{
     margin-bottom: 20px;
@@ -52,7 +56,6 @@ button{
     min-height: 17rem;
 }
 .login-wrapper {
-    box-shadow: 0 0 15px 5px rgba(27, 24, 24, 0.22);
     
     .h-atelier {
         font-weight: 800;

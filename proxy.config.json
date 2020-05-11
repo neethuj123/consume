@@ -1,8 +1,8 @@
 {
-    "/consumptionService/*" : {
+	"context":["/consumptionService/*","**"],
     "target": "http://vm-search003:8198",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
-  }
+  
 }
