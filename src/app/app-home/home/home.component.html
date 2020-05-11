@@ -201,7 +201,8 @@
                       </tag-input>
          
           <div>
-           <img class="download"  src="./../../../assets/img/file-download-icon.png"  (click)="downloadUsageInfo(questionFormModel.fieldType,itemsAsObjects)">
+            <button class="down-btn btn btn-primary use-template"  [translate]="'appHome.home.view'"(click)="downloadUsageInfo(questionFormModel.fieldType,itemsAsObjects)"><span class="down-file">Télécharger</span></button>
+           <!-- <img class="download"  src="./../../../assets/img/file-download-icon.png"  (click)="downloadUsageInfo(questionFormModel.fieldType,itemsAsObjects)"> -->
           <button class="btn btn-primary use-template" disabled  [translate]="'appHome.home.view'"></button>
            <!-- <button class="btn btn-primary use-template" [disabled]="itemsAsObjects.length==0" (click)="downloadUsageInfo(questionFormModel.fieldType,itemsAsObjects)"  [translate]="fetchingTemplateInProgress ? 'processing' : 'appCommon.header.search'"></button> -->
         </div>

@@ -17,7 +17,11 @@ body {
 .app-card {
   background: #ffffff;
 }
-
+.modal-close{
+  margin-bottom: 12px;
+  margin-right: 20px;
+  float: right;
+}
 .app-secondary-card {
     background: #edf3f3;
     border: 1px #dadcdc solid;
@@ -130,6 +134,7 @@ delete-icon svg {
 
 .modal-body {
   padding: 16px;
+  padding-top: 41px;
 }
 
 .modal-footer {

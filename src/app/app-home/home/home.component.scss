@@ -161,3 +161,15 @@
     font-size: 17px;
     color: #25cbd3;
 }
+.down-file{
+    background: url(./../../../assets/img/download.png) no-repeat 1px 0px #ffffff;
+    color: #25cbd3;
+    padding-left: 21px;
+    } 
+.down-btn{
+  background: #fff;
+    cursor: pointer;
+}
+.down-btn:active{
+  background:#fff !important;
+}

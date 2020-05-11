@@ -10,14 +10,11 @@ export interface AlertModel {
   selector: 'alert',
   template: `
     <div class="modal-content">
-      <div class="modal-header">
-        <h4>{{title || 'Alert!'}}</h4>
-      </div>
       <div class="modal-body">
         <p>{{message || 'TADAA-AM!'}}</p>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="close()">OK</button>
+      <div>
+        <button type="button" class="modal-close btn btn-primary" (click)="close()">OK</button>
       </div>
     </div>
   `

@@ -751,7 +751,7 @@ export class HomeComponent implements OnInit {
 //modal
     showNoData() {
         this.SimpleModalService.addModal(AlertComponent, {
-            message: 'No Response or data response count exceeded the limit !!!'
+            message: 'Aucune réponse ou nombre de réponses aux données a dépassé la limite !!!'
         });
     }
     showAlert() {
