@@ -11,8 +11,7 @@ body {
 }
 .page-container {
   min-height: calc(100vh - 182px);
-  background-color: $app-body-color; /* For browsers that do not support gradients */
-  background-image: linear-gradient($app-cyan-color 30%, $app-body-color 30%, $app-body-color 30%);
+  
 }
 .app-card {
   background: #ffffff;

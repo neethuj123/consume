@@ -28,6 +28,12 @@
             "fieldValue": []
           },
           {
+            "fieldLabel": "Raw Usage",
+            "fieldName": "rawUsage",
+            "fieldType": "date",
+            "fieldValue": []
+          },
+          {
             "fieldLabel": "User Id",
             "fieldName": "userId",
             "fieldType": "int",
@@ -112,7 +118,13 @@
           {
             "fieldLabel": " Contract Date",
             "fieldName": "contractDate",
-            "fieldType": " string",
+            "fieldType": "date",
+            "fieldValue": []
+          },
+          {
+            "fieldLabel": "Raw Usage",
+            "fieldName": "rawUsage",
+            "fieldType": "date",
             "fieldValue": []
           },
           {

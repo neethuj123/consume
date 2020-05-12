@@ -152,6 +152,7 @@ export class HomeComponent implements OnInit {
     productFinalArray;
     mode = "or";
     showLoading = false;
+    dateCount =0;
     queryType;
     dateFieldName = null;
     dateFieldFrom: IMyDateModel = null;
@@ -484,7 +485,9 @@ export class HomeComponent implements OnInit {
             this.statusInput = false;
             this.userInput = false;
 
-        } else if (this.questionFormModel.fieldName == "contractDate") {
+        } else if (this.questionFormModel.dataType.trim()== "date") {
+            this.dateCount++
+
             this.alphaInput = false;
             this.subscribeInput = false;
             this.dateInput = true;
@@ -668,6 +671,7 @@ export class HomeComponent implements OnInit {
         this.invalidRange = false;
     }
     fetchTableDetailsFromTo(fieldType, fieldName, from, to, fromTime, toTime) {
+
         this.invalidRange = false;
         this.dateArray = [];
         this.dateFieldName = fieldName;
@@ -684,7 +688,7 @@ export class HomeComponent implements OnInit {
         if (!(date1Obj.getTime() >= date2Obj.getTime())) {
             this.invalidRange = true;
         } else {
-            if (this.itemsAsObjects.findIndex((item) => item.fieldName === fieldName) < 0) {
+            if (this.itemsAsObjects.findIndex((item) => item.fieldName === fieldName) < 0 &&this.itemsAsObjects.findIndex((item) => item.type!="date")) {
                 this.dateArray.push(this.fromTimeInFormat);
                 this.dateArray.push(this.toTimeInFormat);
                 this.itemsAsObjects.push({
@@ -713,9 +717,10 @@ export class HomeComponent implements OnInit {
         fieldValue.forEach((values: any) => {
             this.fieldFormatValues.push(values);
         });
+        console.log(this.fieldFormatValues)
         this.fieldFormatValues = this.fieldFormatValues.filter(({
-            fieldName
-        }) => fieldName !== 'contractDate');
+            type
+        }) => type.trim()!=='date');
         if(fieldType=='Raw'){
             this.queryType='raw'
         }

@@ -1,6 +1,6 @@
 {
 	"context":["/consumptionService/*","**"],
-    "target": "http://vm-search003:8198",
+    "target": "http://vm-nikews001:8191",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true

@@ -10,8 +10,8 @@ const middlewares = jsonServer.defaults()
 server.use(middlewares)
 server.use(jsonServer.rewriter({
   '/consumptionService/getInitialData?token=:token': '/getInitialData?token=:token',
-  '/consumptionService/fetchRawUsageUniversalData': '/mock-api-response',
-  '/consumptionService/user/login': '/userLogin',
+  '/consumptionService/downloadData': '/mock-api-response',
+  '/user/login': '/userLogin',
   '/consumptionService/user/logout': '/userLogout',
 
 })) 
