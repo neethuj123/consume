@@ -193,10 +193,11 @@
                        [identifyBy]="'fieldName'"
                        [displayBy]="'listValue'">
             <ng-template let-item="item" let-index="index">
-                    <span> {{ item.fieldName }}: {{ item.listValue }}</span>
                     <span (click)="input.removeItem(item, index)" class="ng2-tag__remove-button">
-                        x
+                        <img src="./../../../assets/img/close-table.png" style="float:right;" width="22">
                     </span>
+                    <span> {{ item.fieldName }}: {{ item.listValue }}</span>
+                    
                 </ng-template>
                       </tag-input>
          

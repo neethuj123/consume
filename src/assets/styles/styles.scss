@@ -62,13 +62,13 @@ tag-input {
 }
 tag:not(.readonly):not(.tag--editing):focus, tag:not(.readonly):not(.tag--editing):active {
   background: $app-cyan-color !important;
-  height:auto !important;
+  height:max-content !important;
 }
 tag {
   border: 1px solid #ced4da !important;
   line-height: 30px !important;
-    height:auto !important;
-word-break: break-word !important;
+    height:max-content !important;
+word-break: break-all !important;
 }
 delete-icon svg {
   height: 30px !important;

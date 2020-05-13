@@ -685,10 +685,10 @@ export class HomeComponent implements OnInit {
         this.fromTimeInFormat = new Date(this.fromDateRange + " " + fromTime.hour.toString() + ":" + fromTime.minute.toString() + ":" + fromTime.second.toString() + " " + "UTC").toISOString();
 
         this.toTimeInFormat = new Date(this.toDateRange + " " + toTime.hour.toString() + ":" + toTime.minute.toString() + ":" + toTime.second.toString() + " " + "UTC").toISOString();
-        if (!(from.singleDate.jsDate.getTime() > to.singleDate.jsDate.getTime())) {
+        if (!(from.singleDate.jsDate.getTime() >= to.singleDate.jsDate.getTime())) {
             this.invalidRange = true;
         } else {
-            if (this.itemsAsObjects.findIndex((item) => item.fieldName === fieldName) < 0 &&this.itemsAsObjects.findIndex((item) => item.type!="date")) {
+            if (this.itemsAsObjects.findIndex((item) => item.fieldName === fieldName) < 0 && (this.itemsAsObjects.findIndex((item) => item.type.trim()==="date") < 1)) {
                 this.dateArray.push(this.fromTimeInFormat);
                 this.dateArray.push(this.toTimeInFormat);
                 this.itemsAsObjects.push({
