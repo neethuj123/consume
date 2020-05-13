@@ -29,16 +29,21 @@ body {
 
 /** ngx-chips component : Tag-input custom styles **/
 .ng2-tag-input {
-  border-bottom: 2px solid #ffffff !important;
+  border-bottom: 2px solid $app-cyan-color !important;
   padding-left: 0.35rem !important;
   padding-right: 0.35rem !important;
   min-height: 45px !important;
   &.ng2-tag-input--focused {
-      border-bottom: 2px solid $app-cyan-color !important;
+      //border-bottom: 2px solid $app-cyan-color !important;
+  }
+}
+.added-item {
+  .ng2-tag-input{
+    border:none !important;
   }
 }
 .ng2-tag-input__text-input{
-  width:230px !important;
+  width:412px !important;
 }
 .ngb-tp-input{
       width: 41px !important;
@@ -57,11 +62,13 @@ tag-input {
 }
 tag:not(.readonly):not(.tag--editing):focus, tag:not(.readonly):not(.tag--editing):active {
   background: $app-cyan-color !important;
+  height:auto !important;
 }
 tag {
   border: 1px solid #ced4da !important;
   line-height: 30px !important;
-  max-width:100% !important
+    height:auto !important;
+word-break: break-word !important;
 }
 delete-icon svg {
   height: 30px !important;

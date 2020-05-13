@@ -685,7 +685,7 @@ export class HomeComponent implements OnInit {
         this.fromTimeInFormat = new Date(this.fromDateRange + " " + fromTime.hour.toString() + ":" + fromTime.minute.toString() + ":" + fromTime.second.toString() + " " + "UTC").toISOString();
 
         this.toTimeInFormat = new Date(this.toDateRange + " " + toTime.hour.toString() + ":" + toTime.minute.toString() + ":" + toTime.second.toString() + " " + "UTC").toISOString();
-        if (!(date1Obj.getTime() >= date2Obj.getTime())) {
+        if (!(from.singleDate.jsDate.getTime() > to.singleDate.jsDate.getTime())) {
             this.invalidRange = true;
         } else {
             if (this.itemsAsObjects.findIndex((item) => item.fieldName === fieldName) < 0 &&this.itemsAsObjects.findIndex((item) => item.type!="date")) {
