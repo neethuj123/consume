@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 // import ngx-translate and the http loader
@@ -19,15 +19,19 @@ import { AppComponent } from './app.component';
 import { UserLoginComponent } from './app-user/user-login/user-login.component';
 import { AppHistoryComponent } from './app-history/app-history.component';
 import { AlertComponent } from './modal/alert/alert.component';
+import { SimpleModalModule } from 'ngx-simple-modal';
+import { SpinnerComponent } from './modal/alert/spinner.component';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
     AppComponent,
     UserLoginComponent,
     AppHistoryComponent,
-    AlertComponent
+    AlertComponent,
+    SpinnerComponent
   ],
-   entryComponents: [AlertComponent],
+   entryComponents: [AlertComponent,SpinnerComponent],
     imports: [
     BrowserModule,
     FormsModule,
@@ -35,6 +39,7 @@ import { AlertComponent } from './modal/alert/alert.component';
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
+    NgxSpinnerModule,
     MatIconModule,
      // ngx-translate and the loader module
         HttpClientModule,
@@ -47,8 +52,11 @@ import { AlertComponent } from './modal/alert/alert.component';
         }),
     AppHomeModule,
     AppCommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SimpleModalModule.forRoot({container: "modal-container"})
   ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+
   providers: [{ provide: HTTP_INTERCEPTORS , useClass: AppHttpInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })

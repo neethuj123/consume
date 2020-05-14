@@ -1,0 +1,18 @@
+/* my-loader.component.css */
+.loading-spinner{    
+    position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  color: white; background: #666666; opacity: .8;
+  z-index: 1000;
+}
+
+.loading-spinner img{
+    align-self: end;
+}
+
+.loading-message{
+    text-align: center;
+    align-self: start;
+}

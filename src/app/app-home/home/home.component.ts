@@ -688,7 +688,7 @@ export class HomeComponent implements OnInit {
         if (!(from.singleDate.jsDate.getTime() >= to.singleDate.jsDate.getTime())) {
             this.invalidRange = true;
         } else {
-            if (this.itemsAsObjects.findIndex((item) => item.fieldName === fieldName) < 0 && (this.itemsAsObjects.findIndex((item) => item.type.trim()==="date") < 1)) {
+            if (this.itemsAsObjects.findIndex((item) => item.fieldName === fieldName) < 0 && (this.itemsAsObjects.findIndex((item) => item.type.trim()==="date") < 0)) {
                 this.dateArray.push(this.fromTimeInFormat);
                 this.dateArray.push(this.toTimeInFormat);
                 this.itemsAsObjects.push({
@@ -730,11 +730,11 @@ export class HomeComponent implements OnInit {
         this.data ={
             "queryType":this.queryType,
             "dateField": this.dateFieldName,
-            "fromDate": this.fromTimeInFormat,
+            "fromDate": this.toTimeInFormat,
             "globalOperation": this.mode,
             "pageNumber": 0,
-            "recordsPerPage": 0,
-            "toDate": this.toTimeInFormat,
+            "recordsPerPage": 10,
+            "toDate": this.fromTimeInFormat,
             "universalQueryCriteria":this.fieldFormatValues
         }
     this.apiService.postDownload('/downloadData', this.data).subscribe((response) => {
