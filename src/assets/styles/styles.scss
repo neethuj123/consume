@@ -26,7 +26,10 @@ body {
     border: 1px #dadcdc solid;
     padding: 15px;
 }
-
+div.ng2-dropdown-menu.ng2-dropdown-menu---width--4.ng2-dropdown-menu--open {
+  display: block !important; // to display the drop down content
+  max-height: 40vh !important;  // for scrolling of suggestion list
+}
 /** ngx-chips component : Tag-input custom styles **/
 .ng2-tag-input {
   border-bottom: 2px solid $app-cyan-color !important;

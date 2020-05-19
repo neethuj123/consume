@@ -12,6 +12,7 @@ import {
 import {
     SharedDataService
 } from './../../shared/shared-data.service';
+import { NgxSpinnerService } from "ngx-spinner";
 import {
     ActivatedRoute,
     Router
@@ -196,7 +197,8 @@ export class HomeComponent implements OnInit {
         private SimpleModalService: SimpleModalService,
         private config: NgbDatepickerConfig,
         private authenticationService: AuthenticationService,
-        public datepipe: DatePipe
+        public datepipe: DatePipe,
+        private spinner: NgxSpinnerService
     ) {
         this.defaultLang = environment.defaultLang;
     }
@@ -712,8 +714,8 @@ export class HomeComponent implements OnInit {
     }
 
     downloadUsageInfo(fieldType, fieldValue) {
-        this.showLoading = true;
-        this.fieldFormatValues = [];
+        this.spinner.show();
+                this.fieldFormatValues = [];
         fieldValue.forEach((values: any) => {
             this.fieldFormatValues.push(values);
         });
@@ -741,14 +743,14 @@ export class HomeComponent implements OnInit {
         console.log(response)
 
         if(response.body.indexOf('statusMessage')!=-1){
-            this.showLoading = false;
+            this.spinner.hide();
             this.showNoData();
         }
         else{
             const filename = response.headers.get('content-disposition');
             const blob = new Blob([response.body], {type: 'text/csv; charset=utf-8'});
             fileSaver.saveAs(blob, 'download.csv'); 
-            this.showLoading = false;
+            this.spinner.hide();
         }
                      
     });

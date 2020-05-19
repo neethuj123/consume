@@ -12,17 +12,14 @@ import { TagInputModule } from 'ngx-chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SimpleModalModule } from 'ngx-simple-modal';
 import { DatePipe } from '@angular/common'
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LoaderService } from './../services/loader.service';
-import { LoaderInterceptor } from './../interceptors/loader-interceptor.service';
-import { MyLoaderComponent } from './../components/my-loader/my-loader.component';
+import { NgxSpinnerService } from "ngx-spinner";
+
 import { NgxSpinnerModule } from 'ngx-spinner';
 @NgModule({
-  declarations: [HomeComponent, HomeNavComponent,MyLoaderComponent],
+  declarations: [HomeComponent, HomeNavComponent],
   
   imports: [
   	SharedModule,
-    HttpClientModule,
     NgxSpinnerModule,
   	NgbModule,
   	NgSelectModule,
@@ -35,7 +32,6 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     SimpleModalModule.forRoot({container: "modal-container"})
 
   ],
-  providers: [DatePipe,LoaderService,
-    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }]
+  providers: [DatePipe,NgxSpinnerService]
 })
 export class AppHomeModule { }

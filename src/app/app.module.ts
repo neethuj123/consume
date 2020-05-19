@@ -22,6 +22,7 @@ import { AlertComponent } from './modal/alert/alert.component';
 import { SimpleModalModule } from 'ngx-simple-modal';
 import { SpinnerComponent } from './modal/alert/spinner.component';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { NgxSpinnerService } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -57,7 +58,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
   ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
-  providers: [{ provide: HTTP_INTERCEPTORS , useClass: AppHttpInterceptor, multi: true }],
+  providers: [{ provide: HTTP_INTERCEPTORS , useClass: AppHttpInterceptor, multi: true },NgxSpinnerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
